@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import type { Env } from '../index';
 import { toJsonArray, fromJsonArray, toBoolInt } from '../json-utils';
+import { buildPlanPreventionWorkbook, workbookToBuffer, loadInrsMap } from '../xlsx-export';
 
 // Mounted at /api/sites — handles /:siteId/plan-prevention*
 export const planPreventionRoutes = new Hono<{ Bindings: Env }>();
@@ -235,4 +236,26 @@ planPreventionDocRoutes.delete('/lignes/:id', async (c) => {
   const id = c.req.param('id');
   await c.env.DB.prepare('DELETE FROM plan_prevention_lignes WHERE id = ?').bind(id).run();
   return c.json({ ok: true });
+});
+
+planPreventionDocRoutes.get('/documents/:docId/export', async (c) => {
+  const docId = Number(c.req.param('docId'));
+  const full = await loadDocument(c.env.DB, docId);
+  if (!full) return c.json({ error: 'Document introuvable' }, 404);
+
+  const site = await c.env.DB.prepare('SELECT nom, adresse FROM sites WHERE id = ?')
+    .bind(full.site_id).first<{ nom: string; adresse: string | null }>();
+
+  const inrsMap = await loadInrsMap(c.env.DB);
+  const wb = buildPlanPreventionWorkbook(full, site ?? { nom: 'Site inconnu' }, inrsMap);
+  const buf = workbookToBuffer(wb);
+
+  const filename = `plan-prevention-${(site?.nom ?? 'site').replace(/[^a-z0-9]+/gi, '-')}.xlsx`;
+  return new Response(buf, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'Content-Disposition': `attachment; filename="${filename}"`
+    }
+  });
 });

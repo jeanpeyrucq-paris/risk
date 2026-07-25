@@ -1,6 +1,8 @@
 import { Hono } from 'hono';
 import type { Env } from '../index';
 import { toJsonArray, fromJsonArray } from '../json-utils';
+import { buildDuerWorkbook, workbookToBuffer, loadInrsMap } from '../xlsx-export';
+import { buildDuerTemplateExport } from '../xlsx-template-export';
 
 // Mounted at /api/entreprises — handles /:entrepriseId/duer*
 export const duerRoutes = new Hono<{ Bindings: Env }>();
@@ -207,4 +209,32 @@ duerDocRoutes.delete('/taches/:id', async (c) => {
   const id = c.req.param('id');
   await c.env.DB.prepare('DELETE FROM duer_taches WHERE id = ?').bind(id).run();
   return c.json({ ok: true });
+});
+
+duerDocRoutes.get('/documents/:docId/export', async (c) => {
+  const docId = Number(c.req.param('docId'));
+  const full = await loadDocument(c.env.DB, docId);
+  if (!full) return c.json({ error: 'Document introuvable' }, 404);
+
+  const format = c.req.query('format') === 'template' ? 'template' : 'control';
+  const inrsMap = await loadInrsMap(c.env.DB);
+
+  let buf: Uint8Array;
+  let filename: string;
+  if (format === 'template') {
+    buf = await buildDuerTemplateExport(c.env.ASSETS, full);
+    filename = `DUER-${(full.entite ?? 'entreprise').replace(/[^a-z0-9]+/gi, '-')}-modele.xlsx`;
+  } else {
+    const wb = buildDuerWorkbook(full, inrsMap);
+    buf = workbookToBuffer(wb);
+    filename = `DUER-${(full.entite ?? 'entreprise').replace(/[^a-z0-9]+/gi, '-')}-controle.xlsx`;
+  }
+
+  return new Response(buf, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'Content-Disposition': `attachment; filename="${filename}"`
+    }
+  });
 });
