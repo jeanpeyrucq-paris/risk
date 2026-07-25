@@ -4,18 +4,42 @@ Outil interne CBRE HSE pour gerer le **plan de prevention** d'un site client et 
 (Document Unique d'Evaluation des Risques) de l'entreprise, classes selon les 20 categories
 de risques INRS.
 
-## Perimetre de cette version (V1)
+## Perimetre de cette version
 
 Le produit complet prevoit 5 rubriques : (A) Plan de prevention du site, (B) DUER de
 l'entreprise, (C) Analyse des risques (comparaison A/B), (D) Mode operatoire securite,
-(E) Informations. **Seuls les modules A et B sont construits dans cette version** — C et D
-sont volontairement reportes, et apparaissent grises ("a venir") sur la page d'accueil.
-E (contenu de reference statique) est traite de la meme facon.
+(E) Informations. **A, B, D et E sont construits. Seul C reste volontairement reporte**
+(grise "a venir" sur la page d'accueil) — il necessite de croiser le plan de prevention et
+le DUER, ce qui n'a pas encore ete specifie.
 
 Le schema de donnees anticipe neanmoins le module C : chaque ligne de plan de prevention et
 chaque tache DUER porte un `inrs_category_id` optionnel, pointant vers la meme table de
 reference des 20 categories INRS — c'est le concept partage dont C aura besoin pour comparer
 les risques des deux documents.
+
+## Module D : mode operatoire + analyse ERPT
+
+Chaque mode operatoire (rattache a un site, comme le plan de prevention) regroupe :
+- des **taches** (tache / risque present / EPI / EPC / procedures / formations) ;
+- une **analyse ERPT**, deux blocs de lignes ("liee a l'activite" / "liee a l'environnement"),
+  chacune pre-listant les 16 familles de risques fixes (table `familles_risques`), avec
+  cotation F·P·G, EPI/EPC/mesures organisationnelles/mesures humaines et leurs cotations.
+
+Les formules de cotation ont ete retro-documentees a partir du vrai modele Excel
+(`C:\risk-control\doc\Evaluation des risques au poste de travail liée a l'activité.xlsx`) et
+verifiees sur 13 lignes reelles :
+`Rp = F×P×G`, `cotation MT = MIN(EPI, EPC)`, `cotation FOH = MO×MH`,
+`cotation globale = MOYENNE(MT, FOH)`, `niveau de maitrise` (seuils a 0,5 et 0,75),
+`Rr numerique = Rp × cotation globale`.
+
+**Decision produit explicite : la note finale Rr (lettre F/M/S/C) n'est calculee nulle part
+dans l'application.** Elle reste une cellule vide dans l'export Excel, remplie manuellement
+par l'utilisateur — aucune donnee du fichier source ne permettait de deviner les seuils
+M/S/C (tous les exemples reels sont notes 'F').
+
+"Site TEST" est seede avec deux exemples complets (mode operatoire + analyse) transcrits du
+modele reel : "Maintenance Centrale de Traitement d'Air animalerie" et "Recherche panne
+equipement sous tension".
 
 ## Decision de conception : classification INRS
 
@@ -52,7 +76,8 @@ npm run db:seed:local                     # importe les deux fixtures reelles (v
 `npm run db:seed:local` suppose `npm run dev` deja lance sur le port 8787 (`PORT=xxxx npm run
 db:seed:local` sinon). Il importe les deux fixtures via les vrais endpoints d'import (pas de
 SQL brut), ce qui sert aussi de test de bout en bout : le script echoue si les comptages
-n'egalent pas 13 rubriques / 42 lignes et 92 taches.
+n'egalent pas 13 rubriques / 42 lignes, 92 taches, et les comptages exacts des deux exemples
+"Site TEST" (9/17/16 taches-lignes et 4/16/15).
 
 ## Modes d'export
 
@@ -66,16 +91,25 @@ n'egalent pas 13 rubriques / 42 lignes et 92 taches.
   colonnes B/C/M/N/O/P/W/X/Y/AA/AC/AH/AI uniquement — les colonnes non gerees par
   l'application (unites de travail, frequence/probabilite/gravite, "en place ?", risque
   residuel) restent intactes, a completer manuellement.
+- **Mode operatoire** (`GET /api/modes-operatoires/:id/export?type=mode-operatoire`) : classeur
+  genere a partir de zero reprenant la mise en page du modele reel (tableau des taches).
+- **Analyse ERPT** (`.../export?type=analyse`) : classeur reprenant la mise en page du modele
+  reel (colonnes B a Z calculees et remplies ; colonne AA, la note finale Rr, laissee vide —
+  voir "Module D" ci-dessus).
 
 ## Structure
 
 ```
-src/worker/index.ts              point d'entree Hono, montage des routes
-src/worker/routes/*.ts           un fichier par ressource (sites, entreprises, plan-prevention, duer, inrs-categories)
-src/worker/xlsx-export.ts        export "controle" (classeurs generes)
+src/worker/index.ts                  point d'entree Hono, montage des routes
+src/worker/routes/*.ts               un fichier par ressource (sites, entreprises, plan-prevention,
+                                      duer, inrs-categories, familles-risques, modes-operatoires)
+src/worker/xlsx-export.ts            export "controle" (plan de prevention + DUER, classeurs generes)
 src/worker/xlsx-template-export.ts   export DUER dans le vrai modele client
-migrations/0001_init.sql         schema D1 + seed des 20 categories INRS
-public/                          pages HTML + assets (JS vanilla, tmf.css)
-fixtures/                        les deux JSON reels utilises pour le seed/smoke test
-scripts/seed.mjs                 seed via les endpoints d'import (voir ci-dessus)
+src/worker/xlsx-mode-operatoire-export.ts  export mode operatoire + analyse ERPT
+src/worker/mo-cotation.ts            formules de cotation partagees (API + export)
+migrations/0001_init.sql             schema D1 modules A/B + seed des 20 categories INRS
+migrations/0002_mode_operatoire.sql  schema D1 module D + seed des 16 familles de risques
+public/                              pages HTML + assets (JS vanilla, tmf.css)
+fixtures/                            fixtures JSON/JS reelles utilisees pour le seed/smoke test
+scripts/seed.mjs                     seed via les endpoints d'import (voir ci-dessus)
 ```
