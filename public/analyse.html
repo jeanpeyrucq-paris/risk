@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DUER — risk-control</title>
+<title>Analyse des risques — risk-control</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
     <nav class="nav-links">
       <a href="/">Accueil</a>
       <a href="/plan-prevention.html">Plan de prevention</a>
-      <a href="/duer.html" class="active">DUER</a>
-      <a href="/analyse.html">Analyse</a>
+      <a href="/duer.html">DUER</a>
+      <a href="/analyse.html" class="active">Analyse</a>
       <a href="/mode-operatoire.html">Mode operatoire</a>
       <a href="/informations.html">Informations</a>
     </nav>
@@ -27,9 +27,9 @@
 
 <header class="page-head blueprint">
   <div class="wrap">
-    <div class="eyebrow">Module B</div>
-    <h1>Le DUER de mon entreprise</h1>
-    <p>Le Document Unique d'Evaluation des Risques : principales operations, risques, mesures de prevention et de protection, classes selon les categories INRS.</p>
+    <div class="eyebrow">Module C</div>
+    <h1>Analyser les risques de mon site</h1>
+    <p>Comparer le plan de prevention du site au DUER de l'entreprise, categorie INRS par categorie INRS, et statuer sur la procedure a appliquer.</p>
   </div>
 </header>
 
@@ -39,29 +39,21 @@
     <div class="form-card" style="margin-bottom:32px;">
       <div class="form-grid">
         <div class="field">
+          <label for="site-select">Site</label>
+          <select id="site-select"></select>
+        </div>
+        <div class="field">
           <label for="entreprise-select">Entreprise</label>
           <select id="entreprise-select"></select>
         </div>
-        <div class="field">
-          <label>&nbsp;</label>
-          <button class="btn btn-ghost" id="new-entreprise-toggle" type="button">+ Nouvelle entreprise</button>
-        </div>
       </div>
-
-      <form id="new-entreprise-form" hidden style="margin-top:20px;">
-        <div class="form-grid single">
-          <div class="field">
-            <label for="entreprise-nom">Nom de l'entreprise</label>
-            <input id="entreprise-nom" required placeholder="ex : CBRE GWS France SAS">
-          </div>
-        </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Enregistrer l'entreprise</button>
-        </div>
-      </form>
+      <div class="form-actions" style="justify-content:flex-start;">
+        <button class="btn btn-primary" id="open-analyse" type="button">Ouvrir l'analyse</button>
+      </div>
+      <p class="hint" id="open-status" style="margin-top:10px;"></p>
     </div>
 
-    <div id="entreprise-content"></div>
+    <div id="analyse-content"></div>
 
   </div>
 </section>
@@ -73,6 +65,6 @@
   </div>
 </footer>
 
-<script type="module" src="/assets/duer.js"></script>
+<script type="module" src="/assets/analyse.js"></script>
 </body>
 </html>

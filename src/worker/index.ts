@@ -11,6 +11,7 @@ import {
   moTachesRoutes,
   moAnalyseLignesRoutes
 } from './routes/modes-operatoires';
+import { analysesSiteRoutes, analysesRoutes } from './routes/analyses';
 
 export interface Env {
   DB: D1Database;
@@ -39,6 +40,8 @@ app.route('/api/sites', modesOperatoiresSiteRoutes);
 app.route('/api/modes-operatoires', modesOperatoiresRoutes);
 app.route('/api/mo-taches', moTachesRoutes);
 app.route('/api/mo-analyse-lignes', moAnalyseLignesRoutes);
+app.route('/api/sites', analysesSiteRoutes);
+app.route('/api/analyses', analysesRoutes);
 
 app.notFound((c) => c.json({ error: 'Route API inconnue' }, 404));
 

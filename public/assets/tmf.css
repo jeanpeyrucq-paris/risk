@@ -161,7 +161,18 @@ footer{border-top:1px solid var(--line); padding:28px 0; display:flex; justify-c
 
 /* badges de statut */
 .badge{display:inline-flex; align-items:center; gap:6px; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.05em; text-transform:uppercase; padding:4px 10px; border-radius:20px; border:1px solid var(--line);}
+.badge-couvert{color:var(--green-bright); border-color:var(--green);}
+.badge-non-traite{color:var(--amber); border-color:var(--amber);}
+:is(.light-band, .light-panel) .badge-couvert{color:#0f6e4e; border-color:#b9e6cf; background:#e6f7ef;}
+:is(.light-band, .light-panel) .badge-non-traite{color:#8a5a12; border-color:#f0d9ad; background:#fdf1de;}
 .tag-pill{display:inline-flex; font-size:12px; padding:5px 11px; border-radius:20px; background:var(--panel-2); color:var(--muted); border:1px solid var(--line);}
+.analyse-card{background:#ffffff; border:1px solid #e2e7e4; border-radius:8px; padding:24px; margin-bottom:16px;}
+.analyse-card-head{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px; flex-wrap:wrap;}
+.analyse-mesures{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:16px;}
+.analyse-mesures h4{font-size:12.5px; letter-spacing:.04em; color:#5b756a; text-transform:uppercase; font-family:'IBM Plex Mono', monospace; margin-bottom:8px;}
+.analyse-mesures .mesure-item{font-size:13px; color:#1c2420; margin-bottom:10px; line-height:1.5;}
+.analyse-mesures .mesure-item b{color:#12312a;}
+@media (max-width:860px){.analyse-mesures{grid-template-columns:1fr;}}
 
 /* table admin */
 .admin-table{width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:4px; overflow:hidden;}
