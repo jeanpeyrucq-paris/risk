@@ -1,0 +1,916 @@
+{
+  "document": {
+    "titre": "PLAN DE PRÉVENTION ANNUEL",
+    "numero": "A016-26 (Prestation Multitechnique CBRE HARD et ENGIE) Partie 2",
+    "reglementation": "Décret 92.158 du 20/02/1992",
+    "source_pdf": "A016-26 (Prestation Multitechnique CBRE HARD et ENGIE) Partie 2.pdf",
+    "date_extraction": "2026-07-25"
+  },
+  "conditions_intervention": {
+    "definition": {
+      "libelle": "Définition",
+      "texte": "Le plan de prévention définit les consignes générales de sécurité pour les entreprises extérieures en complément des procédures internes et des dispositions légales en vigueur. Le permis de travail est partie intégrante du plan de prévention.",
+      "signataires_permis_travail": [
+        "Le donneur d'ordre",
+        "Le responsable de zone (entreprise utilisatrice Sanofi)",
+        "L'entreprise extérieure et ses sous-traitants"
+      ],
+      "co_activite_note": "La gestion de la co-activité doit être précisée au niveau du permis de travail et au niveau d'un plan de prévention pour opérations particulières (spécifique/ponctuel).",
+      "exclusion_permis_travail": "Les prestations de services (sauf cas particuliers) et les prestations intellectuelles ne sont pas soumises à un permis de travail.",
+      "responsabilite_entreprise_exterieure": "Le responsable de l'entreprise extérieure veille à la bonne application des règles, la formation de son personnel, la fourniture des Équipements de Protection Individuels."
+    },
+    "habilitation": {
+      "libelle": "Habilitation",
+      "texte": "Un certificat attestant de(s) l'habilitation(s) est requis pour chaque intervenant.",
+      "reference": "liste"
+    },
+    "epi": {
+      "libelle": "Équipement de Protection Individuel (EPI)",
+      "texte": "Lors d'une intervention, le port des EPI est obligatoire et défini sur le permis de travail ou dans ce plan de prévention (à minima chaussures de sécurité et vêtement de travail : pantalon et manches longues, lunettes). Des EPI spécifiques aux activités peuvent aussi être exigés."
+    },
+    "accueil": {
+      "libelle": "Accueil",
+      "consignes": [
+        "Faire participer les intervenants des EE à l'accueil sécurité.",
+        "Repérer les équipements de sécurité (douche, extincteur, issue de secours, éléments clés de sécurité) avant le début de l'intervention."
+      ]
+    },
+    "consigne": {
+      "libelle": "Consigne",
+      "consignes": [
+        "Ne pas fumer en dehors des zones réservées (abris fumeurs sur le site).",
+        "Le port du badge est obligatoire.",
+        "Toute prise de vue sans l'accord préalable de Sanofi est strictement interdite."
+      ]
+    },
+    "co_activite": {
+      "libelle": "Co-activité",
+      "consignes": [
+        "Respecter les balisages des autres chantiers.",
+        "Bien baliser son chantier.",
+        "Ne pas prêter de matériel aux autres entreprises.",
+        "Ne pas intervenir sur les opérations des autres entreprises.",
+        "Toujours informer les personnes de la zone des opérations à venir.",
+        "Respecter l'ordre et la propreté sur son chantier."
+      ]
+    },
+    "sanofi_life_saving_rules": {
+      "libelle": "Sanofi Life Saving Rules",
+      "texte": "Toute personne intervenant sur le site de Vitry doit avoir pris connaissance des 10 Life Saving Rules et de les respecter dans le cadre de ses activités (LSR)."
+    },
+    "situation_anormale": {
+      "libelle": "Situation anormale",
+      "texte": "En cas de constat d'anomalie, signaler au donneur d'ordre immédiatement."
+    },
+    "travaux_amiante_fcr": {
+      "libelle": "Travaux sur matériaux contenant de l'amiante / Fibres Céramiques Réfractaires",
+      "zones_amiantees_fcr": "Toute intervention sur ce type de matériaux doit faire l'objet au préalable d'un plan de prévention spécifique (en complément du plan de prévention annuel). Lorsqu'il y a retrait ou encoffrement de l'amiante, un plan de retrait préalable au plan de prévention doit être déposé auprès de l'inspection du travail par l'entreprise « certifiée amiante ».",
+      "document_technique_amiante": "Le Document Technique Amiante (recensement des zones où des matériaux contenant de l'amiante sont en place) peut être consulté et émargé aux services HSE. Les matériaux contenant de l'amiante sont repérés A ou identifiés sur plan en entrée de zones."
+    },
+    "organisation_premiers_secours": {
+      "libelle": "Organisation des premiers secours",
+      "alarme_evacuation": "Sirène à son continu à l'intérieur des bâtiments : feux, fuites d'eau, déversement de produit. Arrêter immédiatement toute activité, évacuer par les escaliers et se rendre au point de rassemblement.",
+      "numeros_urgence": [
+        "Vitry : 112 (7j/7, 24h/24) depuis un poste",
+        "01.55.71.85.30 depuis un mobile"
+      ],
+      "infirmerie": {
+        "note": "Ne pas s'y rendre tout seul",
+        "vitry_crv": "Bâtiment Pascal RDJ",
+        "vitry_cpv": "Bâtiment 11"
+      }
+    }
+  },
+  "plan_prevention": {
+    "rubriques": [
+      {
+        "titre": "Circulation piétons/véhicules",
+        "concerne": true,
+        "page_source": 11,
+        "lignes": [
+          {
+            "dangers": [
+              "Circulation piétonne",
+              "Circulation autour du poste de travail"
+            ],
+            "concerne": true,
+            "risques": [
+              "Chute / glissade",
+              "Choc"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Ne pas courir",
+              "Tenir obligatoirement la main courante",
+              "Il est interdit d'utiliser son téléphone en marchant",
+              "Baliser la zone de travail",
+              "Limiter les encombrements et définir une zone de stockage du matériel",
+              "En cas de sol glissant, baliser et/ou signaler au donneur d'ordre",
+              "Signaler les câbles électriques dans les lieux de passage",
+              "Ne pas marcher sur les tuyauteries, chemins de câble"
+            ]
+          },
+          {
+            "dangers": [
+              "Circulation véhicule",
+              "Circulation des grues, engins de chantier, convois exceptionnels",
+              "Circulation chariot élévateur"
+            ],
+            "concerne": true,
+            "risques": [
+              "Accident / Choc"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Respecter le code de la route",
+              "Respecter la limitation de vitesse à 20 km/h",
+              "Respecter le plan de circulation établi"
+            ]
+          },
+          {
+            "dangers": [
+              "Stationnement des véhicules",
+              "Chargement/déchargement des véhicules"
+            ],
+            "concerne": true,
+            "risques": [
+              "Encombrement des voies de circulation",
+              "Accident"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Ne pas stationner sur les emplacements pompiers, devant les poteaux incendie, sur les trottoirs, devant les issues de secours",
+              "Stationner sur les places identifiées",
+              "Stationnement provisoire toléré devant les entrées des bâtiments pour charger/décharger du matériel uniquement"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Matériel utilisé",
+        "concerne": true,
+        "page_source": 12,
+        "lignes": [
+          {
+            "dangers": [
+              "Outils manuels (Ex : tournevis, clés, …)"
+            ],
+            "concerne": true,
+            "risques": [
+              "Perforation, coupure, choc…"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Vérifier avant chaque utilisation le bon état des outils manuels utilisés",
+              "Disposer les outils dans des boîtes à outils / Ne pas poser les outils en hauteur",
+              "Porter des gants adaptés"
+            ]
+          },
+          {
+            "dangers": [
+              "Utilisation d'objets coupants"
+            ],
+            "concerne": true,
+            "risques": [
+              "Coupure"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Ne pas utiliser d'objets coupants personnels type couteau",
+              "Utiliser pinces coupantes-dénudantes, cutters à lame rétractable automatique",
+              "Porter des gants anti-coupures"
+            ]
+          },
+          {
+            "dangers": [
+              "Utilisation d'équipements électriques"
+            ],
+            "concerne": true,
+            "risques": [
+              "Electrisation - électrocution"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Utiliser des appareils et des rallonges conformes et en bon état"
+            ]
+          },
+          {
+            "dangers": [
+              "Utilisation d'équipements avec points chauds"
+            ],
+            "concerne": true,
+            "risques": [
+              "Brûlure, incendie"
+            ],
+            "entreprises_concernees": "Toutes (Exception : 3DCE)",
+            "moyens_prevention": [
+              "Signaler au donneur d'ordre les travaux par points chauds",
+              "Respecter les mesures définies par le donneur d'ordre (établissement d'un permis de feu, passage SSIAP, explosimètre, extincteur, bâche ignifuge…)",
+              "Signaler au donneur d'ordre la fin des travaux par points chauds immédiatement"
+            ]
+          },
+          {
+            "dangers": [
+              "Utilisation d'appareils sous pression (compresseurs, bouteille)"
+            ],
+            "concerne": true,
+            "risques": [
+              "Projection",
+              "Choc",
+              "Brûlure"
+            ],
+            "entreprises_concernees": "Toutes (Exception : 3DCE)",
+            "moyens_prevention": [
+              "Utiliser des appareils sous pression conformes (marquage)",
+              "Fixer un câble anti fouettement sur les raccords sous pression",
+              "Stocker les bouteilles sous pression à la verticale, arrimées"
+            ]
+          },
+          {
+            "dangers": [
+              "Utilisation d'autoclaves (mis à disposition par SANOFI)"
+            ],
+            "concerne": false,
+            "risques": [],
+            "entreprises_concernees": "",
+            "moyens_prevention": [
+              "Etre formé et habilité à l'utilisation des autoclaves initiale et périodique (5 ans) et fournir une copie de l'habilitation au donneur d'ordre",
+              "Sensibiliser à l'utilisation des autoclaves par responsable du matériel et par équipement"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Travail avec des produits chimiques",
+        "concerne": true,
+        "page_source": 13,
+        "lignes": [
+          {
+            "dangers": [
+              "Utilisation (solide, gaz, liquide)"
+            ],
+            "concerne": true,
+            "risques": [
+              "Contact",
+              "Incendie"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Etre formé à l'utilisation de produits chimiques (CPV : RC niveau 1 minimum)",
+              "Prendre connaissance des Fiches de Données Sécurité",
+              "Lister les produits chimiques susceptibles d'être utilisés et fournir les FDS au donneur d'ordre avant l'intervention",
+              "Appliquer les conseils d'utilisation, d'étiquetage, de stockage et d'élimination",
+              "Porter les EPI spécifiques",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          },
+          {
+            "dangers": [
+              "Stockage, élimination"
+            ],
+            "concerne": true,
+            "risques": [
+              "Pollution sol et/ou eau"
+            ],
+            "entreprises_concernees": "ENGIE",
+            "moyens_prevention": [
+              "Stocker les produits sur cuvette de rétention",
+              "En cas de déversement, composer le 112 d'un poste fixe / 01 55 71 85 30 d'un portable",
+              "Contenir le déversement à la source"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Levage / Manutention",
+        "concerne": true,
+        "page_source": 14,
+        "lignes": [
+          {
+            "dangers": [
+              "Manutention manuelle"
+            ],
+            "concerne": true,
+            "risques": [
+              "Contrainte posturale",
+              "Blessure"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Privilégier l'utilisation de chariot et de transpalette",
+              "Respecter les bons gestes et postures",
+              "Porter obligatoirement des gants de manutention et chaussures de sécurité",
+              "Pour toute manutention de charge >50 kg, un mode opératoire détaillé doit obligatoirement être fourni avant l'intervention (PONTICELLI et ESO IDF)"
+            ]
+          },
+          {
+            "dangers": [
+              "Utilisation d'engins de levage / manutention (grue, palans, chariot élévateur...)"
+            ],
+            "concerne": true,
+            "risques": [
+              "Chute de la charge",
+              "Choc",
+              "Arrachement rack, ligne HT"
+            ],
+            "entreprises_concernees": "PONTICELLI, TRANE, ENGIE",
+            "moyens_prevention": [
+              "Etre formé et habilité à la conduite (Permis CACES + autorisation de conduite)",
+              "Fournir à Sanofi les certificats de contrôle",
+              "Réaliser un plan de prévention spécifique si grutage",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Travail en hauteur",
+        "concerne": true,
+        "page_source": "14-15",
+        "lignes": [
+          {
+            "dangers": [
+              "Utilisation de moyens de travail en hauteur"
+            ],
+            "concerne": true,
+            "risques": [
+              "Chute"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Privilégier les EPC : Plate-Forme Individuelle Roulante Légère (PIRL) ; Echafaudage fixe ou mobile : être habilité au montage/réception avant utilisation ; Nacelle : fournir les certificats de contrôle, être habilité, baliser au sol, vigie, porter harnais de sécurité (longe de 0,6 m) et casque avec jugulaire. S'arrimer au point d'ancrage de la nacelle uniquement",
+              "Ne pas travailler en extérieur si le vent dépasse 45km/h",
+              "Sous condition : échelle/escabeau ➔ permis de travail obligatoire",
+              "Pour toute utilisation de PIRL/PIR, Escabeau et Echelle, scanner le QR code pour : s'assurer de l'état de l'équipement avant son utilisation, vérifier la nécessité de réaliser un permis de travail en hauteur",
+              "Identifier les équipements de travail en hauteur, et les attacher hors utilisation (cadenassage ou local fermé)",
+              "Rédiger obligatoirement un permis de travail (bon de travail en hauteur) (CRV obligatoire pour hauteur de travail > 1m80)"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail sur terrasse"
+            ],
+            "concerne": true,
+            "risques": [
+              "Chute"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Ne pas travailler seul",
+              "En cas d'absence de garde-corps, porter le harnais avec ligne de vie et point d'ancrage",
+              "Demander au donneur d'ordre le numéro du point d'ancrage / ligne de vie avant démarrage des travaux",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          },
+          {
+            "dangers": [
+              "Intervention dans une zone à planchers mixtes (porteur / non porteur)"
+            ],
+            "concerne": true,
+            "risques": [
+              "Chute"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Demander au donneur d'ordre la cartographie des planchers porteurs / non porteurs avant toute intervention",
+              "Respecter les limites de charges admissibles sur la surface",
+              "Respecter les mesures définies par le donneur d'ordre",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          },
+          {
+            "dangers": [
+              "Intervention sous caillebotis"
+            ],
+            "concerne": true,
+            "risques": [
+              "Chute"
+            ],
+            "entreprises_concernees": "Toutes (Exceptions : Ponticelli et ESO IDF)",
+            "moyens_prevention": [
+              "Ne pas travailler seul",
+              "Respecter les mesures définies par le donneur d'ordre",
+              "Baliser avec protections rigides autour du caillebotis déposé, vigie obligatoire pendant l'intervention",
+              "Apporter un éclairage supplémentaire"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Travail avec équipements sous énergie",
+        "concerne": true,
+        "page_source": "15-16",
+        "lignes": [
+          {
+            "dangers": [
+              "Travail électrique / instrumentation"
+            ],
+            "concerne": true,
+            "risques": [
+              "Electrisation / électrocution"
+            ],
+            "entreprises_concernees": "Toutes (Exceptions : Ponticelli et 3DCE)",
+            "moyens_prevention": [
+              "Être formé et habiliter obligatoirement ses intervenants et fournir une copie de l'habilitation au donneur d'ordre",
+              "Avant toute intervention électrique, le donneur d'ordre doit faire valider par l'exploitant électrique site les habilitations"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail sur appareils et tuyauteries"
+            ],
+            "concerne": true,
+            "risques": [
+              "Projection",
+              "Brûlure"
+            ],
+            "entreprises_concernees": "Toutes (Exception : Ponticelli)",
+            "moyens_prevention": [
+              "Avant toute intervention électrique, le donneur d'ordre doit faire valider par l'exploitant électrique site les habilitations"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail sur machines"
+            ],
+            "concerne": true,
+            "risques": [
+              "Entraînement",
+              "Ecrasement"
+            ],
+            "entreprises_concernees": "Toutes (Exception : 3DCE)",
+            "moyens_prevention": [
+              "Respecter les mesures définies par le donneur d'ordre",
+              "Faire consigner impérativement par Sanofi avant toute intervention",
+              "S'assurer que la consignation de l'équipement a été réalisée physiquement avant toute intervention",
+              "Alerter le donneur d'ordre à la fin de l'intervention",
+              "Faire déconsigner l'équipement",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Travail en zone(s) dangereuse(s)",
+        "concerne": true,
+        "page_source": 16,
+        "lignes": [
+          {
+            "dangers": [
+              "Intervention dans un local concerné par le risque anoxie"
+            ],
+            "concerne": true,
+            "risques": [
+              "Asphyxie/ anoxie"
+            ],
+            "entreprises_concernees": "Toutes (Exceptions : TRANE, ESO IDF, 3DCE)",
+            "moyens_prevention": [
+              "Respecter les mesures définies par le responsable de zone",
+              "Respecter les procédures d'accès et les consignes affichées à l'entrée",
+              "Avant toute intervention dans les locaux à risques anoxie, fournir la liste des personnes à former au DO afin qu'une sensibilisation soit faite par les équipes Sanofi",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail en locaux Cryoconservateurs"
+            ],
+            "concerne": true,
+            "risques": [
+              "Asphyxie/ anoxie"
+            ],
+            "entreprises_concernees": "DFM",
+            "moyens_prevention": [
+              "Respecter les mesures définies par le responsable de zone",
+              "Respecter les procédures d'accès et les consignes affichées à l'entrée",
+              "Avant toute intervention dans les locaux à risques anoxie, fournir la liste des personnes à former au DO afin qu'une sensibilisation soit faite par les équipes Sanofi",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          },
+          {
+            "dangers": [
+              "Intervention dans un espace confiné"
+            ],
+            "concerne": true,
+            "risques": [
+              "Asphyxie / anoxie",
+              "Intoxication / chute"
+            ],
+            "entreprises_concernees": "Toutes (Exception : 3DCE)",
+            "moyens_prevention": [
+              "Signaler au donneur d'ordre le travail en espace confiné",
+              "Respecter les mesures définies par le donneur d'ordre et le responsable de zone (procédures, autorisation/bon de pénétrer obligatoire, connexion au réseau)",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          },
+          {
+            "dangers": [
+              "Intervention dans une zone ATEX"
+            ],
+            "concerne": true,
+            "risques": [
+              "Incendie",
+              "Explosion"
+            ],
+            "entreprises_concernees": "PONTICELLI, ENGIE",
+            "moyens_prevention": [
+              "Prendre connaissance des zones ATEX du site",
+              "Demander une autorisation/bon de feu en cas de travail par point chaud (CPV : bon de feu rayé noir obligatoire)",
+              "Respecter les mesures définies par le donneur d'ordre et le responsable de zone et les procédures en vigueur",
+              "Aucun équipement électrique ou mécanique ne doit entrer en zone ATEX sans bon de feu (y compris téléphone, montre connectée, appareil photo,..)",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Travail en laboratoire",
+        "concerne": true,
+        "page_source": "16-17",
+        "lignes": [
+          {
+            "dangers": [
+              "Travail en laboratoires de biologie"
+            ],
+            "concerne": true,
+            "risques": [
+              "Contamination"
+            ],
+            "entreprises_concernees": "",
+            "moyens_prevention": [
+              "Habiliter obligatoirement ses intervenants et fournir une copie de l'habilitation au donneur d'ordre (ex : biologique en L2, L3 / chimique)"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail en laboratoires de chimie"
+            ],
+            "concerne": true,
+            "risques": [
+              "Projection / contact"
+            ],
+            "entreprises_concernees": "",
+            "moyens_prevention": [
+              "Habiliter obligatoirement ses intervenants et fournir une copie de l'habilitation au donneur d'ordre (ex : biologique en L2, L3 / chimique)"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail en laboratoire d'hydrogénation"
+            ],
+            "concerne": true,
+            "risques": [
+              "Explosion"
+            ],
+            "entreprises_concernees": "ENGIE, DFM",
+            "moyens_prevention": [
+              "Faire signer le permis de travail par le responsable de zone avant d'accéder au laboratoire",
+              "Demander le certificat de nettoyage / décontamination avant intervention"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail en animaleries"
+            ],
+            "concerne": true,
+            "risques": [
+              "Sensibilisation",
+              "Morsures"
+            ],
+            "entreprises_concernees": "",
+            "moyens_prevention": [
+              "Intervenir sur des zones de travail préalablement dégagées par le personnel du laboratoire",
+              "Respecter les règles d'habillage et les mesures d'hygiène spécifiques"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail en laboratoire contenant des sources de rayonnement ionisant"
+            ],
+            "concerne": true,
+            "risques": [
+              "Irradiation / contamination"
+            ],
+            "entreprises_concernees": "ENGIE",
+            "moyens_prevention": [
+              "Dans les laboratoires non classés, il n'y a pas de risque d'irradiation ou contamination possible (enceintes plombées)",
+              "Dans les laboratoires classés, zones surveillées (trèfle gris-bleu) ou contrôlées (trèfle vert) : pas d'intervention pendant les manipulations",
+              "Demande de bon de décontamination et d'autorisation avant toute intervention",
+              "Une estimation de la dose sera effectuée par la PCR site et transmise à la PCR de l'EE. Le responsable de l'EE doit établir une liste du personnel autorisé à rentrer en zone",
+              "Le personnel EE intervenant dans ces zones doit être sensibilisé à la radioprotection"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail sur des équipements laser"
+            ],
+            "concerne": true,
+            "risques": [
+              "Brûlures",
+              "Atteintes oculaires"
+            ],
+            "entreprises_concernees": "ENGIE",
+            "moyens_prevention": [
+              "Etre sensibilisé aux risques laser (en fonction des classes de laser utilisées)",
+              "Respecter les procédures d'accès et les consignes affichées à l'entrée",
+              "En cas d'intervention à proximité du laser, consigner le faisceau",
+              "Si le faisceau n'est pas confiné, porter des lunettes de protection adaptées à la longueur d'onde émise par le faisceau laser"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Travail en locaux RMN ou à proximité de portoirs aimantés",
+        "concerne": true,
+        "page_source": 18,
+        "lignes": [
+          {
+            "dangers": [
+              "Travail en locaux RMN ou à proximité de portoirs aimantés"
+            ],
+            "concerne": true,
+            "risques": [
+              "Exposition aux champs électromagnétiques"
+            ],
+            "entreprises_concernees": "ENGIE, DFM",
+            "moyens_prevention": [
+              "Ne pas entrer si port de stimulateur cardiaque ou implants métalliques",
+              "Respecter les procédures d'accès et les consignes affichées à l'entrée"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Ambiance physique",
+        "concerne": true,
+        "page_source": 18,
+        "lignes": [
+          {
+            "dangers": [
+              "Travail en chambre froide"
+            ],
+            "concerne": true,
+            "risques": [
+              "Hypothermie, gelure"
+            ],
+            "entreprises_concernees": "ENGIE, DFM, PONTICELLI",
+            "moyens_prevention": [
+              "S'assurer de l'aptitude médicale des intervenants",
+              "Porter les EPI adaptés"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail en zone bruyante"
+            ],
+            "concerne": true,
+            "risques": [
+              "Fatigue auditive / Surdité"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Porter les protections auditives adaptées"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail à l'extérieur"
+            ],
+            "concerne": true,
+            "risques": [
+              "Hypothermie/coup de chaud"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Porter les EPI adaptés",
+              "Aménager le temps de travail, faire des pauses régulières dans des locaux équipés de moyens techniques adaptés (chauffage, climatisation, ventilation etc.)",
+              "Mettre à disposition de l'eau potable et fraîche"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail en zone en manque d'éclairage"
+            ],
+            "concerne": true,
+            "risques": [
+              "Chute, blessure"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Signaler au donneur d'ordre le travail en zone à éclairage faible avant toute intervention",
+              "Apporter un éclairage supplémentaire conforme électriquement si nécessaire"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Intervention spécifique",
+        "concerne": true,
+        "page_source": "18-19",
+        "lignes": [
+          {
+            "dangers": [
+              "Travail isolé"
+            ],
+            "concerne": true,
+            "risques": [
+              "Absence de secours en cas d'accident, malaise"
+            ],
+            "entreprises_concernees": "ENGIE",
+            "moyens_prevention": [
+              "Le travail isolé doit être limité au maximum : travail en binôme à privilégier",
+              "Fournir la liste des postes de travailleur isolé",
+              "Demander et porter un système de protection du travailleur isolé prêté par SANOFI (DATI, PTI, talkie)"
+            ]
+          },
+          {
+            "dangers": [
+              "Lavage haute pression"
+            ],
+            "concerne": true,
+            "risques": [
+              "Brûlure, projection"
+            ],
+            "entreprises_concernees": "TRANE, ENGIE",
+            "moyens_prevention": [
+              "Porter des EPI adaptés (ex : bottes avec semelles antidérapantes ou à renforts)",
+              "Transmettre les FDS des produits utilisés"
+            ]
+          },
+          {
+            "dangers": [
+              "Travail avec laine de verre/ laine de roche/ poussières"
+            ],
+            "concerne": true,
+            "risques": [
+              "Irritation"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "Porter un masque anti-poussière adapté",
+              "Rédiger obligatoirement un permis de travail"
+            ]
+          },
+          {
+            "dangers": [
+              "Fouille"
+            ],
+            "concerne": false,
+            "risques": [
+              "Arrachement des réseaux",
+              "Eboulement"
+            ],
+            "entreprises_concernees": "",
+            "moyens_prevention": [
+              "Signaler au donneur d'ordre le travail de fouille",
+              "Rédiger obligatoirement un « bon / autorisation de fouille »",
+              "Respecter les mesures définies par le donneur d'ordre",
+              "Baliser la zone avec barrières physiques",
+              "Etayage le cas échéant",
+              "Rédiger obligatoirement un permis de travail",
+              "Transmettre aux entreprises réalisant les travaux les plans des réseaux enterrés"
+            ]
+          },
+          {
+            "dangers": [
+              "Percement / carottage de murs (voiles béton, cloisons, portes, panneaux…) / planchers / Ponçage / Sciage"
+            ],
+            "concerne": true,
+            "risques": [
+              "Incendie/Explosion",
+              "Fibres",
+              "Poussières"
+            ],
+            "entreprises_concernees": "Toutes (Exception : 3DCE)",
+            "moyens_prevention": [
+              "Identifier avec le donneur d'ordre la faisabilité de ces percements / carottages sur des matériaux coupe-feu",
+              "Si percement, remettre en état obligatoirement en utilisant des matériaux de remplissages incombustibles",
+              "Vérifier l'absence de MPCA avant tout percement (voir Document Technique Amiante)",
+              "Respecter les mesures définies par le donneur d'ordre",
+              "Privilégier la mise en œuvre de techniques générant le moins de poussières possible",
+              "Prévoir des dispositifs d'aspiration à la source / anti projection, si nécessaire",
+              "Humidifier/brumiser si nécessaire",
+              "Porter les protections respiratoires adaptées"
+            ]
+          },
+          {
+            "dangers": [
+              "Connexion sur les réseaux/fluides SANOFI"
+            ],
+            "concerne": true,
+            "risques": [
+              "Erreur de connexion"
+            ],
+            "entreprises_concernees": "TRANE, PONTICELLI, ENGIE, DFM, ESO IDF, 3DCE",
+            "moyens_prevention": [
+              "Signaler au donneur d'ordre les besoins en connexion (électricité, eau, …)",
+              "Rédiger obligatoirement un permis de travail",
+              "Respecter les mesures définies par le donneur d'ordre/responsable de zone"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Travail sur écran",
+        "concerne": true,
+        "page_source": 19,
+        "lignes": [
+          {
+            "dangers": [
+              "Travail sur écran (bureautique)"
+            ],
+            "concerne": true,
+            "risques": [
+              "Fatigue visuelle"
+            ],
+            "entreprises_concernees": "Toutes",
+            "moyens_prevention": [
+              "L'installation électrique et l'ordinateur utilisé doivent être conformes",
+              "Le poste de travail doit être aménagé pour permettre une bonne ergonomie (clavier en face de l'écran, écran à hauteur des yeux, luminosité suffisante)",
+              "Faire des pauses régulières (se lever et marcher)",
+              "Faire des pauses visuelles toutes les 20min (regarder au loin pour reposer les yeux)"
+            ]
+          }
+        ]
+      },
+      {
+        "titre": "Environnement",
+        "concerne": true,
+        "page_source": 20,
+        "type": "gestion_dechets",
+        "gestion_dechets": {
+          "entreprises_concernees": "ENGIE, TRANE",
+          "horaires_dechetterie": "13h00 - 15h00",
+          "regles": [
+            "Tous les déchets issus de Sanofi doivent passer par le service Environnement.",
+            "Retourner les BSD à SANOFI : hsse-vitry-r&d@sanofi.com",
+            "Interdiction de stocker des déchets en dehors d'une benne Sanofi"
+          ],
+          "types_dechets": [
+            {
+              "type": "Bois et déchets verts",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "Ferraille",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "Mobiliers",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "Plâtre",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "Produits Chimiques",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "D3E",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "Déchet Banal",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "Gravats",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "Papier / Carton",
+              "coche": false,
+              "volume": null
+            },
+            {
+              "type": "Autre",
+              "coche": false,
+              "volume": null
+            }
+          ],
+          "localisation_dechetterie": "Aire 88",
+          "contacts": [
+            {
+              "nom": "LANDOU Qadir",
+              "tel": "07 88 60 22 05"
+            },
+            {
+              "nom": "CPV-Environnement (GD Véolia)",
+              "email": "CPV-Environnement@sanofi.com"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

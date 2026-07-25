@@ -1,0 +1,3056 @@
+{
+  "document": {
+    "titre": "Document Unique d'Evaluation des Risques Professionnels",
+    "entite": "CBRE GWS France SAS",
+    "adresse": "17 quai du Président Paul Doumer - 92400 COURBEVOIE ",
+    "perimetre": "Maintenance multitechnique du bâtiment - coordination des entreprises sous-traitantes - Facility management - gestion de projet d'aménagement",
+    "date_mise_a_jour": "2025-10-15T00:00:00",
+    "redacteurs": "Nicolas Bernard / Islem Resgui / Theo Rocca",
+    "source_fichier": "Document Unique 2026v1 Revue EA.xlsx"
+  },
+  "duer": {
+    "taches": [
+      {
+        "ligne_source": 10,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Relamping",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Luminaire",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Vêtement de travail ( si possilbe Atex / Arc Flash)",
+          "Chaussures de sécurité",
+          "Gants de manipulation fine",
+          "Kit de consignation",
+          "VAT",
+          "Balisage de la zone si travail en hauteur"
+        ],
+        "formation_specifique": [
+          "Habilitation électrique niveau BS à minima"
+        ],
+        "mesures_organisationnelles": [
+          "Consignation des énergies préalable au niveau du disjoncteur",
+          "Loto - condamnation du départ éléctrique",
+          "Permis de travail électrique",
+          "EA : Verification de compétence electrique"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 11,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Réarmement de disjoncteur",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Armoire électrique",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)"
+        ],
+        "epc_epi": [
+          "Vêtement de travail",
+          "Chaussures de sécurité",
+          "Gants",
+          "Casque électricien"
+        ],
+        "formation_specifique": [
+          "minimum l'habilitation BE Manœuvre ou l'habilitation BS"
+        ],
+        "mesures_organisationnelles": [
+          "EA : Verification de compétence electriq"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 12,
+        "principales_operations": "Conduite de véhicule",
+        "facteur_exposition": "Circulation en voiture / camionnette",
+        "risques": [
+          "Accident de la route"
+        ],
+        "risques_inrs": "Risques routiers en mission",
+        "equipement": "VL",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Sécurité intrinsinque des VL",
+        "regles_qui_sauvent": [
+          "Règle 4 - Conduite"
+        ],
+        "epc_epi": [
+          "Sécurité des véhicules (ceinture de sécurité)"
+        ],
+        "formation_specifique": [
+          "Formation aux risques routiers"
+        ],
+        "mesures_organisationnelles": [
+          "Code de la route applicable à tous",
+          "Charte de conduite de vehicule CBRE",
+          "Maintenance des véhicules CBRE",
+          "Contrat de \"full maintenance\" intégré",
+          "Contrat intégrant pneumatiques été/hiver"
+        ],
+        "further_actions": [
+          "Procédure de vérification (checklist) des véhicules à réaliser par les managers à remettreen place"
+        ],
+        "comment": [
+          "Politique de déplacements",
+          "Limiter les déplacements et favoriser les visio conférence",
+          "Favoriser les déplacements par les transports en commun (train)"
+        ]
+      },
+      {
+        "ligne_source": 13,
+        "principales_operations": "Travaux administratifs",
+        "facteur_exposition": "Travail sur écran",
+        "risques": [
+          "Fatigue visuelle / TMS"
+        ],
+        "risques_inrs": "18. Risques liés au travail sur écran",
+        "equipement": "Ordinateur / écran / caliver et souris",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Ergonomie des bureaux et chaise ergonomique",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Matériel bureautique ergonomique"
+        ],
+        "formation_specifique": [
+          "Atelier d'ergonomie",
+          "Core Safety Training : elearning"
+        ],
+        "mesures_organisationnelles": [
+          "Non"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 14,
+        "principales_operations": "Manutention manuelle",
+        "facteur_exposition": "Ouverture de trappes et regards",
+        "risques": [
+          "Coupure / ecrasement / TMS"
+        ],
+        "risques_inrs": "05. Risques liés à la manutention manuelle de charge",
+        "equipement": "Trappes et regards",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Conception des trappes variable selon age matériaux et utilité",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Gants de manutention lourde",
+          "Chaussure de sécurité",
+          "Outils de levage",
+          "Balisage de la zone de travail."
+        ],
+        "formation_specifique": [
+          "Core Safety Training : elearning"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Check list manutention manuelle MANHa",
+          "Préférez l'utilisation d'outil de levage spécifique (lève plaque, pioche…)",
+          "Ne jamais laisser une plaque ouverte sans balisage"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 15,
+        "principales_operations": "Manutention manuelle",
+        "facteur_exposition": "Déménagement de meubles",
+        "risques": [
+          "TMS / heurt / choc / ecrasement"
+        ],
+        "risques_inrs": "05. Risques liés à la manutention manuelle de charge",
+        "equipement": "Mobilier",
+        "fonctionnement": "Normal",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Gants de manutention",
+          "Chaussure de sécurité"
+        ],
+        "formation_specifique": [
+          "Formation gestes et postures",
+          "Core Safety Training : elearning"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Check list manutention manuelle MANHa",
+          "Travail à deux pour le mobilier volumineux",
+          "Utilitation des moyens mécaniques de manutention (chariots, transpalettes, véhicules…)",
+          "Outils spécifique de levage hors equpement necessitant formation spécifique (CACES)"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 16,
+        "principales_operations": "Utilisation d'outils électroportatif",
+        "facteur_exposition": "Meulage",
+        "risques": [
+          "Coupure / incendie / projection de matière"
+        ],
+        "risques_inrs": "13. Risques d'incendie, d'explosion",
+        "equipement": "Meuleuse / disqueuse",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Outils munis de capot / carter deprotection  sur autour de la lame et d'une poignée",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 7 - travail par point chaud"
+        ],
+        "epc_epi": [
+          "Gants anticoupure",
+          "Ecran facial",
+          "Vêtements de travail",
+          "balisage de la zone de travail",
+          "extincteur"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW :  Travauxparpoint chaud",
+          "Formation extincteur"
+        ],
+        "mesures_organisationnelles": [
+          "Permis de travail signé",
+          "Procedure hot work",
+          "Procedure PTW : Permis Feu",
+          "Vérification préalable du matériel (verification avant utilisation / inspection annuelle)",
+          "Choix préalable du disque le plus adaptée au matériau découpé",
+          "Interdiction d'enlever la poignée"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 17,
+        "principales_operations": "Utilisation d'outils électroportatif",
+        "facteur_exposition": "Meulage",
+        "risques": [
+          "Coupure / incendie / projection de matière"
+        ],
+        "risques_inrs": "13. Risques d'incendie, d'explosion",
+        "equipement": "Meuleuse / disqueuse",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Outils munis de capot / carter deprotection  sur autour de la lame et d'une poignée",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 7 - travail par point chaud"
+        ],
+        "epc_epi": [
+          "Gants anticoupure",
+          "Ecran facial",
+          "Vêtements de travail",
+          "balisage de la zone de travail",
+          "extincteur"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning"
+        ],
+        "mesures_organisationnelles": [
+          "Permis de travail signé",
+          "Procedure hot work",
+          "Procedure PTW : Permis Feu",
+          "Vérification préalable du matériel (verification avant utilisation / inspection annuelle)",
+          "Choix préalable du disque le plus adaptée au matériau découpé",
+          "Interdiction d'enlever la poignée"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 18,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Travail sur escabeau",
+        "risques": [
+          "Chute de hauteur  Basculement de l'escabeau",
+          "Chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Escabeau",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Escabeau conforme EN 131 (pas de défault structurel, présence des patins anti-dérapant)",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité",
+          "Balisage de la zone"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW : Travaux en hauteur au dessus de 1,8 m"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection escabeau aavnt utilisation",
+          "Inspection mensuelle WAHSa",
+          "Privilégier l'utilisation d'une pirl lorsque c'est possible.",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,80 signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 19,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Travail sur escabeau",
+        "risques": [
+          "Chute de hauteur  Basculement de l'escabeau",
+          "Chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Escabeau",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Escabeau conforme EN 131 (pas de défault structurel, présence des patins anti-dérapant)",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité",
+          "Balisage de la zone"
+        ],
+        "formation_specifique": [
+          "Core safety training :travail en hauteur"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Privilégier l'utilisation d'une pirl lorsque c'est possible.",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,8m signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 20,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Remplacement de disjoncteur dans une armoire électrique BT",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Armoire électrique",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Casque électricien",
+          "Gants électricien",
+          "Vêtement de travail (arc flash et Atex si possible)",
+          "Chaussures de sécurité",
+          "Tapis isolant",
+          "Kit de consignation",
+          "VAT",
+          "Balisage"
+        ],
+        "formation_specifique": [
+          "Tous : Habilitation électrique niveau BR à minima",
+          "Coordinateur : Formation PTW travaux electrique"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 21,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Maintenance electrique BT",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Equipement électrique",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Casque électricien",
+          "Gants électricien",
+          "Vêtement de travail (arc flash et Atex si possible)",
+          "Chaussures de sécurité",
+          "Tapis isolant",
+          "Kit de consignation",
+          "VAT",
+          "Balisage"
+        ],
+        "formation_specifique": [
+          "Tous : Habilitation électrique niveau BR à minima",
+          "Coordinateur : Formation PTW travaux electrique"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 22,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Recherche de panne électrique",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Tout équipement électrique",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Casque électricien",
+          "Gants électricien",
+          "Vêtement de travail (arc flash et Atex si possible)",
+          "Chaussures de sécurité",
+          "Tapis isolant",
+          "Kit de consignation",
+          "VAT",
+          "Balisage"
+        ],
+        "formation_specifique": [
+          "Habilitation électrique niveau BR à minima",
+          "Coordinateur : Formation PTW travaux electrique"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 23,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Travail sur nacelle élévatrice",
+        "risques": [
+          "Chute de hauteur",
+          "Chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Nacelle élévatrice",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equipement conforme et CE",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 6 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casque avec jugulaire",
+          "Chaussure de sécurité",
+          "gants de travail",
+          "équipement de protection contre les chute de hauteur (harnais et longe sans absorbeur)",
+          "Balisage de la zone de travail"
+        ],
+        "formation_specifique": [
+          "Formation nacelle :",
+          "CACES 486 A linéaire",
+          "CACES 486 B mouvements horizontaux ou une rotation",
+          "Formation port du harnais",
+          "Coordinateur : Formation PTW travail en hauteur"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail en hauteur signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 24,
+        "principales_operations": "Travaux mécaniques",
+        "facteur_exposition": "Remplacement de courroies moteur extracteur d'air",
+        "risques": [
+          "Electrisation / électrocution",
+          "Coupure / heurt"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Extracteur d'air",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Casque / Chaussure de sécurité / gants de travail / lunettes de sécurité",
+          "Kit de consignation",
+          "Balisage de la zone de travail"
+        ],
+        "formation_specifique": [
+          "Habiitation BR pour les consignations électriques"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 25,
+        "principales_operations": "Travaux mécaniques",
+        "facteur_exposition": "Remplacement de filtre CTA",
+        "risques": [
+          "Manutention"
+        ],
+        "risques_inrs": "09. Risques liés aux équipements de travail",
+        "equipement": "CTA",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Refixer systéatiquement des capôts et boulonneries",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation"
+        ],
+        "epc_epi": [
+          "Casque / Chaussure de sécurité / gants de travail / lunettes de sécurité",
+          "Kit de consignation",
+          "Balisage de la zone de travail"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Arrêt préalable de la CTA au commutateur avec cadenas",
+          "Test de redemarage",
+          "Vérification prélabale des outillages"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 26,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Mesure d'intensité",
+        "risques": [
+          "Electrisation / electrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Equipement électrique",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 3 - travaux electriques"
+        ],
+        "epc_epi": [
+          "Casque électricien",
+          "Gants électricien",
+          "Vêtement de travail ( Atex et Arc Flach si possible)",
+          "Multimètre"
+        ],
+        "formation_specifique": [
+          "Habilitation électrique niveau BR à minima",
+          "Coordinateur : Formation PTW travaux electrique"
+        ],
+        "mesures_organisationnelles": [
+          "Permis de travail électrique signé",
+          "Repérage des plans",
+          "Etiquetage",
+          "Suivi des modes opératoires"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 27,
+        "principales_operations": "Relevés et mesures",
+        "facteur_exposition": "Relevé de compteur",
+        "risques": [
+          "Ecrasement des mains/ pieds"
+        ],
+        "risques_inrs": "09. Risques liés aux équipements de travail",
+        "equipement": "Plaque / couvercle de regard",
+        "fonctionnement": "Normal",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [],
+        "epc_epi": [
+          "Casque / casquette coquéex",
+          "Chaussures de sécurité",
+          "gants de manutention",
+          "Lunette de sécurité",
+          "Outil de levage de plaque"
+        ],
+        "formation_specifique": [
+          "Gestes et postures"
+        ],
+        "mesures_organisationnelles": [],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 28,
+        "principales_operations": "Travaux mécaniques",
+        "facteur_exposition": "Montage / démontage de brides",
+        "risques": [
+          "Projection de liquide / choc heurt / pincement / chute d'objet / gestes et postures"
+        ],
+        "risques_inrs": "09. Risques liés aux équipements de travail",
+        "equipement": "Canalisation",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation"
+        ],
+        "epc_epi": [
+          "Casque / casquette coquéex",
+          "Chaussures de sécurité",
+          "gants de manutention",
+          "Lunette de sécurité"
+        ],
+        "formation_specifique": [
+          "Habiitation BR pour les consignations électriques"
+        ],
+        "mesures_organisationnelles": [
+          "Autorisation prélable aux travaux de démontage",
+          "Consignation préalable des équipements électriques",
+          "Fermeture et condamnation des vannes / purge des réseaux",
+          "Elemination des energies residuelles",
+          "Vérification prélabale des outillages"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 29,
+        "principales_operations": "Travaux mécaniques",
+        "facteur_exposition": "Travaux mécaniques sur tuyauterie - remplacement de vanne par exemple",
+        "risques": [
+          "Projection de liquide / choc heurt / pincement / chute d'objet / electrisation / gestes et postures"
+        ],
+        "risques_inrs": "09. Risques liés aux équipements de travail",
+        "equipement": "Canalisation",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation"
+        ],
+        "epc_epi": [
+          "Casque / Chaussure de sécurité / gants de travail / lunettes de sécurité",
+          "Kit de consignation",
+          "Balisage de la zone de travail"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Autorisation prélable aux travaux de démontage",
+          "Consignation préalable des équipements électriques",
+          "Fermeture et condamnation des vannes / purge des réseaux",
+          "Elemination des energies residuelles",
+          "Vérification prélabale des outillages"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 30,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Raccordement électrique",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Câble / Matériel électrique",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Casque électricien",
+          "Gants électricien",
+          "Vêtement de travail (arc flash et Atex si possible)",
+          "Chaussures de sécurité",
+          "Tapis isolant",
+          "Kit de consignation",
+          "VAT",
+          "Balisage"
+        ],
+        "formation_specifique": [
+          "Habilitation B1 minimum",
+          "Coordinateur : Formation PTW travaux electrique"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 31,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Remplacement d'intérrupteur / remplacement de prise",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Prise / interrupteur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Casque électricien",
+          "Gants électricien",
+          "Vêtement de travail (arc flash et Atex si possible)",
+          "Chaussures de sécurité",
+          "Tapis isolant",
+          "Kit de consignation",
+          "VAT",
+          "Balisage"
+        ],
+        "formation_specifique": [
+          "Habilitation BS minimum",
+          "Coordinateur : Formation PTW travaux electrique"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 32,
+        "principales_operations": "Bricolage",
+        "facteur_exposition": "Travaux de serrurerie",
+        "risques": [
+          "Coupure / heurt"
+        ],
+        "risques_inrs": "09. Risques liés aux équipements de travail",
+        "equipement": "Outillage manuel ou électroportatif",
+        "fonctionnement": "Normal",
+        "mesures_conception": "N/A",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité / Gants de manutention / Lunettes de sécurité"
+        ],
+        "formation_specifique": [
+          "Non"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque préalbale et vérification du bon fonctionnement et de la présence de tout les éléments de sécurité sur les outils"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 33,
+        "principales_operations": "Bricolage",
+        "facteur_exposition": "Montage / démontage de meuble",
+        "risques": [
+          "Coupure / heurt"
+        ],
+        "risques_inrs": "05. Risques liés à la manutention manuelle de charge",
+        "equipement": "Mobilier  / outillage manuel ou électroportaif",
+        "fonctionnement": "Normal",
+        "mesures_conception": "N/A",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité / Gants de manutention / Lunettes de sécurité"
+        ],
+        "formation_specifique": [
+          "Formation gestes et postures"
+        ],
+        "mesures_organisationnelles": [
+          "Procédure manual handling"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 34,
+        "principales_operations": "Relevés et mesures",
+        "facteur_exposition": "Recherche de fuite sur groupe froid",
+        "risques": [],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Groupe Froid",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Sonde de détection fixesur les groupe de capacité supérieur à 500KG",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8   / Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Habilitation BS minimum",
+          "Etre titulaire d'une attestation de capacité de niveau I pour les frigoriste"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 35,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Remplacement de fluide frigorigène",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Fluide frigorigène",
+        "fonctionnement": "Normal",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Etre titulaire d'une attestation de capacité de niveau I pour les frigoriste"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de fluide évacué"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 36,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Manipulation de déchets dangereux",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Déchets dangereux",
+        "fonctionnement": "Normal",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de dechets"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 37,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Stockage de déchets liquides dangereux",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Liquides et produits chimiques étiquetés dangereux",
+        "fonctionnement": "Normal",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de dechets",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 38,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Stockage de produits chimiques",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Liquides et produits chimiques étiquetés dangereux / Cuve / IBC / Bidons",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Compatibilité des matériaux  et étiquetage des produits",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de dechets",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 39,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Utilisation de colle / vernis / peinture",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Colle / vernis / peinture",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Compatibilité des matériaux  et étiquetage des produits",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de dechets",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 40,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Utilisation de solvant",
+        "risques": [
+          "Projection de solvant / Inhalation de COV / brûlure / incendie"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Solvant",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Compatibilité des matériaux  et étiquetage des produits",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de dechets",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 41,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Utilisation de lubrifiant",
+        "risques": [
+          "Projection de lubrifiant / Chute et glissade / incendie"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Lubrifiant",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Compatibilité des matériaux  et étiquetage des produits",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de dechets",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 42,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Remplissage de cuve en réactif chimique",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Cuve de réactif chimique",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Compatibilité des matériaux  et étiquetage des produits / cuve double peau",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de dechets",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 43,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Manipulation de canne d'aspiration de réactif chimique",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Canne d'aspiration de réactif chimique",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Matériel CE et compatible avec produit",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles",
+          "Déclaration aux autorités des quantités par type de dechets",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 44,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Travaux sur pirl",
+        "risques": [
+          "chute de hauteur"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Pirl",
+        "fonctionnement": "Normal",
+        "mesures_conception": "PIRL conforme EN 131 (pas de défault structurel, présence des patins anti-dérapant)",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité",
+          "Balisage de la zone"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW : Travaux en hauteur au dessus de 1,8 m"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection mensuelle WAHSa",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,80 signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 45,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Accès en hauteur à l'aide d'une échelle",
+        "risques": [
+          "Chute de hauteur / chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Echelle",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Echelle conforme EN 131 (pas de défault structurel, présence des patins anti-dérapant)",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité",
+          "Balisage de la zone"
+        ],
+        "formation_specifique": [
+          "Non"
+        ],
+        "mesures_organisationnelles": [
+          "L'échelle n'est qu'un moyen d'accès - Elle doit faire l'objet d'une vérifcation pralable et être attachée en tête - Présence d'un second opérateur",
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection mensuelle WAHSa",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,80 signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 46,
+        "principales_operations": "Travaux de soudure",
+        "facteur_exposition": "Soudure à l'arc",
+        "risques": [
+          "Brulure / incendie / explosion"
+        ],
+        "risques_inrs": "13. Risques d'incendie, d'explosion",
+        "equipement": "Chariot soudeur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equiepement CE",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 7 - travail par point chaud"
+        ],
+        "epc_epi": [
+          "EPI du soudeur",
+          "gants épais en cuir",
+          "casque de soudage à cristaux liquides",
+          "vêtements en coton ignifugé",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8"
+        ],
+        "formation_specifique": [
+          "Formation soudure à l'arc",
+          "Formation extincteur",
+          "Core safety training : elearning",
+          "Formation PTW :  Travaux par point chaud"
+        ],
+        "mesures_organisationnelles": [
+          "Permis de travail signé",
+          "Procedure hot work",
+          "Procedure PTW : Permis Feu",
+          "Vérification préalable du matériel (verification avant utilisation / inspection annuelle)",
+          "Procedure soudure à l'arc",
+          "EA : Verification de compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 47,
+        "principales_operations": "Travaux de soudure",
+        "facteur_exposition": "Soudure par brassage",
+        "risques": [
+          "Brulure / incendie / explosion"
+        ],
+        "risques_inrs": "13. Risques d'incendie, d'explosion",
+        "equipement": "Chariot soudeur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equiepement CE",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 7 - travail par point chaud"
+        ],
+        "epc_epi": [
+          "EPI du soudeur",
+          "gants épais en cuir",
+          "casque de soudage à cristaux liquides",
+          "vêtements en coton ignifugé"
+        ],
+        "formation_specifique": [
+          "Formation soudure à l'arc",
+          "Formation extincteur",
+          "Core safety training : elearning",
+          "Formation PTW :  Travaux par point chaud"
+        ],
+        "mesures_organisationnelles": [
+          "Permis de travail signé",
+          "Procedure hot work",
+          "Procedure PTW : Permis Feu",
+          "Vérification préalable du matériel (verification avant utilisation / inspection annuelle)",
+          "Procedure soudure brasage",
+          "EA : Verification de compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 48,
+        "principales_operations": "Travaux avec outils manuels",
+        "facteur_exposition": "Utilisation d'outil à main",
+        "risques": [
+          "Coupure"
+        ],
+        "risques_inrs": "09. Risques liés aux équipements de travail",
+        "equipement": "Tournevis / clés / marteau…",
+        "fonctionnement": "Normal",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Gants anticoupure / lunettes de sécurité / Vêtements de travail /"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Vérification des outils et de leur intégrité avant utilisation"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 49,
+        "principales_operations": "Travaux avec outils manuels",
+        "facteur_exposition": "Utilisation d'outil tranchant ou coupant",
+        "risques": [
+          "Coupure"
+        ],
+        "risques_inrs": "09. Risques liés aux équipements de travail",
+        "equipement": "Cutter / Masicot / couteau / scie à main / grattoir munie de lame de cutter",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Couteaux de sureté avec lames enfermées  ou\nsafety Cutter à lame rétractable uniquement",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Gants anticoupure maxicut / lunettes de sécurité / Vêtements de travail"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Couteaux de sureté avec lames enfermées",
+          "Vérification des outils et de leur intégrité avant utilisation",
+          "Cutter interdit",
+          "Cutter à lame rétractable et débrayable autorisé"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 50,
+        "principales_operations": "Travaux en espace confiné",
+        "facteur_exposition": "Travail en espace confiné",
+        "risques": [
+          "Asphixie/ Intoxication / inhalation de gaz"
+        ],
+        "risques_inrs": "19. Risques liés aux interventions en zones spécifiques (non destinées à la présence humaine, ou avec restriction d'accès)",
+        "equipement": "Cuves / galerie / poste de relevage",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Identification des espaces confinés",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 6 - travailespace confiné"
+        ],
+        "epc_epi": [
+          "Casque avec jugulaire",
+          "lunette de sécurité",
+          "Chaussure de sécurité adaptée",
+          "gants de travail",
+          "Detecteur 4 gaz etaloné",
+          "protection respiratoire adaptée",
+          "protection contre les chutes",
+          "Balisage de la zone de travail",
+          "Moyen de communication"
+        ],
+        "formation_specifique": [
+          "Formation CATEC - Certificat d'aptitude aux travaux en Espaces Confinés",
+          "Formation harnais",
+          "Formation PTW  espace confinée"
+        ],
+        "mesures_organisationnelles": [
+          "Permis de travail signé",
+          "Procedure espace confinée",
+          "Procedure PTW : espace confinés",
+          "Vérification préalable du matériel (verification avant utilisation / inspection annuelle)",
+          "EA : Verification de compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 51,
+        "principales_operations": "Travaux exposant aux intempéries",
+        "facteur_exposition": "Travail extérieure en période de canicule",
+        "risques": [
+          "Coup de chaud / desydratation"
+        ],
+        "risques_inrs": "12. Risques liés aux ambiances thermiques",
+        "equipement": "Environnement extérieur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Adapter ses vêtements aux conditions sans pour autant supprimer les EPI nécessaires pour les tâches à excécuter"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Adapter les horaires de travail en fonction des conditions météos - Décaler tôt le matin les interventions extérieures en cas de canicule mesure de prevention en cas de canicule et travaux extérieur",
+          "Pauses fréquentes et adaptées",
+          "Réduction de la charge de travail",
+          "Protection solaire et équipements",
+          "Prévoir ou aménager des zones d'ombre ou des abris",
+          "Fourniture d'eau pour s'hydrater abondamment"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 52,
+        "principales_operations": "Travaux exposant aux intempéries",
+        "facteur_exposition": "Travail extéreur en période de froid",
+        "risques": [
+          "Prendre froid / gelure"
+        ],
+        "risques_inrs": "12. Risques liés aux ambiances thermiques",
+        "equipement": "Environnement extérieur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "non",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "EPI et vêtements chauds"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Vérification des conditions météos prélablement à l'opération - décaler les interventions si besoins",
+          "Mise à disposition de boisson chaude",
+          "Mise à dispostion de locaux chauffés",
+          "Réduction de la charge de travail",
+          "Pauses fréquentes et adaptées"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 53,
+        "principales_operations": "Travaux exposant aux bruits",
+        "facteur_exposition": "Exposition au bruit",
+        "risques": [
+          "Perte d'audition"
+        ],
+        "risques_inrs": "11. Risques et nuisances liés au bruit",
+        "equipement": "Environnement bruyant",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Identification des équipements et zones bruyantes",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Port des protections auditives dans les zones signalées bruyantes"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Obligatoire au dessus de 85db",
+          "Recommandé à partir de 80db",
+          "Sensibilisation du personnel",
+          "Identification des zones à risque (cartographie)",
+          "Identification des équipements/véhicules bruyants nécessitant le port d’EPI pour l’utilisateur",
+          "Suppression de la source de bruit lorsque cela est possible (mise à l'arret de l'équipement bruyant)",
+          "Si impossible :",
+          "Limitation de la durée d’exposition (X heures/jours)",
+          "Port des EPI (casques/protections auditives)"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 54,
+        "principales_operations": "Exposition à la chaleur",
+        "facteur_exposition": "Exposition aux équipements générant de la chaleur",
+        "risques": [
+          "Brulure"
+        ],
+        "risques_inrs": "09. Risques liés aux équipements de travail",
+        "equipement": "Equipements / machines / Tuyauteries",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Conformité équipement",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Port des EPI classique",
+          "Port de gant anti-chaleur"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Signalétique des surface chaude",
+          "Respect des modes opératoires existants",
+          "Ne pas toucher les surfaces chaudes"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 55,
+        "principales_operations": "Exposition à l'amiante",
+        "facteur_exposition": "Travail à proximité d'équipement contenant de l'amiante",
+        "risques": [
+          "Maladie professionnelle"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Faux plafonds / Sol / isolations de bâtiment / Elements de tuyauteries…",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "DTA et cartogrpahie et repérage effecuée",
+        "regles_qui_sauvent": [
+          "Amiante"
+        ],
+        "epc_epi": [
+          "Obligation de droit de retrait",
+          "EPI",
+          "masque FFP3"
+        ],
+        "formation_specifique": [
+          "Sensibilisation interne"
+        ],
+        "mesures_organisationnelles": [
+          "Travaux sur amiante interdit",
+          "Se référer préalablement au DTA pour identifier les zones / matériaux contenant de l'amiante /",
+          "Respect stricte des affichages",
+          "Pour tout travail sur matériaux amianté => consulter une entreprise spécialisé via le client"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 56,
+        "principales_operations": "Travaux en atmosphère poussiéreuse",
+        "facteur_exposition": "Exposition à la poussière",
+        "risques": [
+          "Inhalation de poussière / Maladie professionnelle"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Matériel électroportatif essentiellement",
+        "fonctionnement": "normal",
+        "mesures_conception": "Ventilation des espaces d'intervention",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité",
+          "Masque FFP3"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Actions de sensibilisation/préparation :",
+          "Sensibilisation à la selection et au port du masque (étanchiété)",
+          "Examen du type de la poussière (Par exemple : via seirich, etc) si necessaire demandé FDS",
+          "Rédaction d'un mode opératoire spécifique",
+          "Actions Techniques :",
+          "Bonne ventilation.",
+          "Interdiction de fumer.",
+          "Nettoyage régulier des chantiers",
+          "Evacuation des gravats ou déchets",
+          "Aspiration des poussières",
+          "Port de masque anti-poussières.",
+          "Utilisation de détecteurs adaptés si necessaire.",
+          "Limiter la durée d'exposition en fonction de l'évaluation du risque (X heures / jours)."
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 57,
+        "principales_operations": "Bricolage",
+        "facteur_exposition": "Remplacement de dalle de faux plafond",
+        "risques": [
+          "Chute de hauteur / chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Pirl / escabeau / nacelle / échaffaudage",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equipement EN 131",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité",
+          "Masque pourla poussière",
+          "Mise en place d'un balisage"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW : Travaux en hauteur au dessus de 1,8 m",
+          "Si echaffaudage:formation montage / demaontage"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection mensuelle WAHSa",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,80 signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 58,
+        "principales_operations": "Relevés et mesures",
+        "facteur_exposition": "Recherche dans les faux plafond (branchement / fuite…)",
+        "risques": [
+          "Chute de hauteur / chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Pirl / escabeau / nacelle / échaffaudage",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equipement EN 131",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité",
+          "Masque pour la poussière",
+          "Mise en place d'un balisage"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW : Travaux en hauteur au dessus de 1,8 m",
+          "Si echaffaudage:formation montage / demaontage"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection mensuelle WAHSa",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,80 signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 59,
+        "principales_operations": "Exposition aux produits chimiques",
+        "facteur_exposition": "Remplissage de cuve en réactif chimique",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Cuve de réactif chimique",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Compatibilité des matériaux  et étiquetage des produits / cuve double peau",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : Sensibilisation à la manipulation des produits chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Attention aux mélange de déchets incompatibles"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 60,
+        "principales_operations": "Manutention manuelle",
+        "facteur_exposition": "Rayonnage / rangement",
+        "risques": [
+          "Chute d'objet / effondrement / TMS"
+        ],
+        "risques_inrs": "05. Risques liés à la manutention manuelle de charge",
+        "equipement": "Armoire / rayonnage",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Rayonnage conforme et sécurisé",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Gants",
+          "Lunettes de sécurité",
+          "Chaussure de sécurité"
+        ],
+        "formation_specifique": [
+          "Coresafety training :manutention mauelle"
+        ],
+        "mesures_organisationnelles": [
+          "Eléments lourd en bas",
+          "Eléments léger en haut",
+          "Adopyter une démarche 5S"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 61,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Branchement de matériel informatique sur prise",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "matériel informatique",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 15100",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Gants",
+          "Lunettes de sécurité",
+          "Chaussure de sécurité"
+        ],
+        "formation_specifique": [
+          "Coresafety training :manutention mauelle"
+        ],
+        "mesures_organisationnelles": [
+          "Vériication préalable de l'état des équipement",
+          "Procedure WKEQ"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 62,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Remplacement ou réparation de BAES",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "BAES",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "BAES isolé - matériel normé",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Casque électricien",
+          "Gants électricien",
+          "Vêtement de travail (arc flash et Atex si possible)",
+          "Chaussures de sécurité",
+          "Tapis isolant",
+          "Kit de consignation",
+          "VAT",
+          "Balisage"
+        ],
+        "formation_specifique": [
+          "Formation : habilitation électrique indice BS",
+          "Coordinateur formation PTW :Travaux electrique"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 63,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Remplacement ou réparation de BAES",
+        "risques": [
+          "Chute de hauteur / chute d'objet / électrisation"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "BAES",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "BAES isolé - matériel normé",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Gants",
+          "Lunettes de sécurité",
+          "Chaussure de sécurité"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW : Travaux en hauteur au dessus de 1,8 m",
+          "Si echaffaudage:formation montage / demaontage"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection mensuelle WAHSa",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Priviligier la PIRL",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,80 signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 64,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Branchement dans baie de brassage",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "RJ45",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Mesure de conception des installations électriques selon norme NFC 115",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "En fonction de la tache",
+          "Non Electrique",
+          "Casquette coquée",
+          "Gants",
+          "Lunettes de sécurité",
+          "Chaussure de sécurité",
+          "Electrique",
+          "Casque électricien",
+          "Gants électricien",
+          "Vêtement de travail (arc flash et Atex si possible)",
+          "Chaussures de sécurité",
+          "Outillage isolé",
+          "Tapis isolant",
+          "Kit de consignation",
+          "VAT",
+          "Balisage"
+        ],
+        "formation_specifique": [
+          "Formation :",
+          "Coordinateur formation PTW :Travaux electrique",
+          "Habilitation B0 / H0  permet de pénétrer dans ces zones sans intervenir directement sur les équipements électriques sous tension",
+          "Habilitation BS destinée aux non-électriciens pour des interventions hors tension",
+          "Habilitation BE effectuer des vérifications d'absence ou de présence de tension, ou réaliser des manœuvres spécifiques sur des équipements électriques, comme la vérification de la tension sur une carte mère ou un onduleu"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 65,
+        "principales_operations": "Exposition aux risques biologiques",
+        "facteur_exposition": "Exposition à la légionnelle",
+        "risques": [
+          "Maladie professionnelle / légionnelose"
+        ],
+        "risques_inrs": "08. Risques liés aux agents biologiques",
+        "equipement": "Tour Aéroréfrigérante",
+        "fonctionnement": "Normal",
+        "mesures_conception": null,
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)"
+        ],
+        "epc_epi": [
+          "Masque FFP3",
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité"
+        ],
+        "formation_specifique": [
+          "Formation aux risques légionnelles"
+        ],
+        "mesures_organisationnelles": [
+          "Masque P3 à moins de 8m des Tour Aeroréfrigérante"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 66,
+        "principales_operations": "Exposition aux risques d'emissions",
+        "facteur_exposition": "Travail sur équipements contenant des eaux usées",
+        "risques": [
+          "Projection d'eau usée, intervention de plomberie"
+        ],
+        "risques_inrs": "08. Risques liés aux agents biologiques",
+        "equipement": "Tout équipement d'assainissemeny",
+        "fonctionnement": "Normal",
+        "mesures_conception": null,
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants chimique",
+          "Lunettes de sécurité"
+        ],
+        "formation_specifique": [
+          "Non"
+        ],
+        "mesures_organisationnelles": [
+          "Consignation éllectrique des pompes/équipement si necessaire",
+          "Consignation hydraulique si possible"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 67,
+        "principales_operations": "Exposition aux risques d'emissions",
+        "facteur_exposition": "Travail sur équipements contenant des eaux usées",
+        "risques": [
+          "Projection d'eau usée / exposition à l'H2S"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Tout équipement d'assainissemeny",
+        "fonctionnement": "Normal",
+        "mesures_conception": null,
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Gants manchette de protection chimique / lunettes de sécurité / vêtement couvrant",
+          "Si intervention dans réseau d'assianissement => detection 4 gaz"
+        ],
+        "formation_specifique": [
+          "Non"
+        ],
+        "mesures_organisationnelles": [
+          "Consignation éllectrique des pompes/équipement si necessaire",
+          "Consignation hydraulique si possible",
+          "Si intervention réseau d'asssainissement : mesure d'athmosphère permanente"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 68,
+        "principales_operations": "Travaux électriques",
+        "facteur_exposition": "Maintenance HT",
+        "risques": [
+          "Electrisation / électrocution"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "Poste HT",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Mesure de conception des installations électriques HT",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 2 - Consignation",
+          "Règle 3 - travaux électrique"
+        ],
+        "epc_epi": [
+          "Casque électricien",
+          "Gants électricien classe 3",
+          "Vêtement de travail ignifuges et anti-arc",
+          "Chaussures de sécurité isolante",
+          "Tapis isolant et Tabouret",
+          "Perche electrique",
+          "Balisage"
+        ],
+        "formation_specifique": [
+          "Habilitation électrique niveau HTA/HTB",
+          "Coordinateur formation PTW :Travaux electrique"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque dynmaique ou RAD",
+          "Permis de travail electrique signé",
+          "Consignation des énergies",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 69,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Utilisation d'échafaudage fixe",
+        "risques": [
+          "Chute de hauteur / chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Echaffaudage",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equipement conforme",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casque avec jugulaire",
+          "Chaussure de sécurité",
+          "Gants de travail",
+          "Lunettes de sécurité"
+        ],
+        "formation_specifique": [],
+        "mesures_organisationnelles": [
+          "Inspecter le PV de reception:equipement conforme",
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection journalière",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Inspection règlementaire au bout de 3 mois"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 70,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Utilisation d'échafaudage mobile",
+        "risques": [
+          "Chute de hauteur / chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Echaffaudage",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equipement conforme et CE",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casque avec jugulaire",
+          "Chaussure de sécurité",
+          "Gants de travail",
+          "Lunettes de sécurité"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW : Travaux en hauteur au dessus de 1,8 m",
+          "Si echaffaudage:formation montage / demaontage"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection mensuelle WAHSa",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Priviligier la PIRL",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,80 signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 71,
+        "principales_operations": "Travaux mécaniques",
+        "facteur_exposition": "Montage d'échaffaudage mobile",
+        "risques": [
+          "Chute de hauteur",
+          "Chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Echaffaudage",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Notice constructeur\nEquipement conforme et CE",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casque avec jugulaire",
+          "Chaussure de sécurité",
+          "Gants de travail",
+          "Lunettes de sécurité"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW : Travaux en hauteur au dessus de 1,8 m",
+          "Si echaffaudage:formation montage / demaontage"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Inspection mensuelle WAHSa",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Priviligier la PIRL",
+          "Permis de travail en hauteur pour les hauteurs de plus de 1,80 signé",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 72,
+        "principales_operations": "Déplacement de plain-pied",
+        "facteur_exposition": "Déplacements de plain pied dans les locaux techniques",
+        "risques": [
+          "Chute / trébuchement"
+        ],
+        "risques_inrs": "01. Risques de chute de plain-pied (trébuchement, heurt ou autre perturbation de mouvement)",
+        "equipement": "Etat des sols",
+        "fonctionnement": "normal",
+        "mesures_conception": "Cheminements piétons stable et sans obstacle ou déformations du sol \nSignalisations au sol",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité"
+        ],
+        "formation_specifique": [
+          "Non"
+        ],
+        "mesures_organisationnelles": [
+          "Respect des cheminement piéton  / signaler les anomalies"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 73,
+        "principales_operations": "Déplacement de plain-pied",
+        "facteur_exposition": "Déplacements de plain pied dans les locaux tertiaires",
+        "risques": [
+          "Chute / trébuchement"
+        ],
+        "risques_inrs": "01. Risques de chute de plain-pied (trébuchement, heurt ou autre perturbation de mouvement)",
+        "equipement": "Etat des sols",
+        "fonctionnement": "normal",
+        "mesures_conception": "Cheminements piétons stable et sans obstacle ou déformations du sol",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Non applicable"
+        ],
+        "formation_specifique": [
+          "Non"
+        ],
+        "mesures_organisationnelles": [
+          "Respect des cheminement piéton  / signaler les anomalies"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 74,
+        "principales_operations": "Déplacement de plain-pied",
+        "facteur_exposition": "Déplacements de plain pied en extérieur (hors zone de coactivité)",
+        "risques": [
+          "Chute / trébuchement"
+        ],
+        "risques_inrs": "01. Risques de chute de plain-pied (trébuchement, heurt ou autre perturbation de mouvement)",
+        "equipement": "Etat des sols",
+        "fonctionnement": "normal",
+        "mesures_conception": "Cheminements piétons stable et sans obstacle ou déformations du sol \nSignalisations au sol",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité"
+        ],
+        "formation_specifique": [
+          "Non"
+        ],
+        "mesures_organisationnelles": [
+          "Respect des cheminement piéton  / signaler les anomalies"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 75,
+        "principales_operations": "Déplacement de plain-pied",
+        "facteur_exposition": "Utilisation des escaliers",
+        "risques": [
+          "Chute / trébuchement"
+        ],
+        "risques_inrs": "01. Risques de chute de plain-pied (trébuchement, heurt ou autre perturbation de mouvement)",
+        "equipement": "Etat des marches",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Conception des marches / nez de marches / rampes et rambarde",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Rambarde"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning"
+        ],
+        "mesures_organisationnelles": [
+          "Tenir la rampe / signaler les anomalies"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 76,
+        "principales_operations": "Déplacement de plain-pied",
+        "facteur_exposition": "Déplacement en zone de coactivité Piétons / véhicule",
+        "risques": [
+          "Heurt / collision avec un véhicule"
+        ],
+        "risques_inrs": "03. Risques liés aux circulations internes de véhicules",
+        "equipement": "Véhicules",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Cheminements piétons stable et sans obstacle ou déformations du sol \nSignalisations au sol et signalisation verticales",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité",
+          "Gilet haute visibilité"
+        ],
+        "formation_specifique": [
+          "Non"
+        ],
+        "mesures_organisationnelles": [
+          "Plan de Prevention prise de connaissance du PDP",
+          "Induction site",
+          "Respect des cheminements piéton  / signaler les anomalies",
+          "Priorité aux véhicules"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 77,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Accès à uneplateforme camion",
+        "risques": [
+          "Chute de hauteur / chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Echelle",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equipement conforme et CE",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Casquette coquée",
+          "Gants",
+          "Lunettes de sécurité",
+          "Chaussure de sécurité"
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "Respect de la règle des 3 points de contact avec l'échelle",
+          "Rester face à l'echelle",
+          "vigilence en fonction des conditions météo"
+        ],
+        "further_actions": [],
+        "comment": [
+          "Accident de travail fedex"
+        ]
+      },
+      {
+        "ligne_source": 78,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Accès par échelle à crinoline",
+        "risques": [
+          "Chute de hauteur / chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Echelle à crinoline",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Equipement conforme et CE",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "casque avec jugulaire",
+          "Gants",
+          "Lunettes de sécurité",
+          "Chaussure de sécurité",
+          "Harnais",
+          "disposition stop chute"
+        ],
+        "formation_specifique": [
+          "Core safety training : elearning",
+          "Formation PTW : Travaux en hauteur au dessus de 1,8 m",
+          "Portdu Harnais"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Matériel ressencé et référencé",
+          "Permis de travail en hauteur",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 79,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Vérifier le niveau de produit de traitement.",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Circuit injection réactif",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Cuves de réactif fermées \nEtiquettage des cuves avec mention de danger",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 80,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Contrôler les consommations de produit de traitement",
+        "risques": [
+          "Contrôle visuel uniquement"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Circuit injection réactif",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Cuves de réactif fermées \nEtiquettage des cuves avec mention de danger",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 81,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Contrôle le fonctionnement des pompes d’injection de produits",
+        "risques": [
+          "Projection de produits chimiques / Inhalation de vapeurs chimiques / brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Circuit injection réactif",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Favoriser la mise en place de protection physique sur les pompes et doubles enveloppe sur les circuits d'injection",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "non"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Respect strict des consignes de tri",
+          "Produits sur rétention"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 82,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Contrôler le déclenchement des approvisionnements",
+        "risques": [
+          "Pas de risque identifié pour cette tâche"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Circuit injection réactif",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Non applicable"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 83,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Nettoyer les bacs, tuyaux et cannes d’injection",
+        "risques": [
+          "Risques de projections chimiques / Inhalation / Brûlure"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Circuit injection réactif",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Etiquetage des cuves avec mention de danger",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants de protection chimique",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Formation aux risques chimiques"
+        ],
+        "mesures_organisationnelles": [
+          "Consignation électrique préalable des pompes doseuses - Détenir et avoir lu la FDS des produits avant opération",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich",
+          "Les rejets sont récupérés dans des bidons identifiés",
+          "Les chiffons souillées sont considérés comme des DIS"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 84,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Suivi du Titre Hydrométrique",
+        "risques": [
+          "Pas de risque identifié pour cette tâche"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Adoucisseur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Non applicable"
+        ],
+        "formation_specifique": [
+          "Non applicable"
+        ],
+        "mesures_organisationnelles": [
+          "Suivi en continu"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 85,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Rajout de sels",
+        "risques": [
+          "port de charge (Sac de sel 25KG) + risque de coupure à l'ouverture des sacs"
+        ],
+        "risques_inrs": "05. Risques liés à la manutention manuelle de charge",
+        "equipement": "Adoucisseur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chariot",
+          "Vêtement de travail couvrant",
+          "Gants anticoupure",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Coresafety training : manutention manuellle"
+        ],
+        "mesures_organisationnelles": [
+          "Utilisation d'un chariot pour le transort des sacs.",
+          "Cutter interdit - utiliser un outil à lame rétractable pour l'ouverture des sacs"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 86,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Nettoyage et désinfection du bac à sel",
+        "risques": [
+          "Chute / glissade"
+        ],
+        "risques_inrs": "01. Risques de chute de plain-pied (trébuchement, heurt ou autre perturbation de mouvement)",
+        "equipement": "Adoucisseur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité SRC3c/ vêtement de travail/ casquette de sécurité"
+        ],
+        "formation_specifique": [],
+        "mesures_organisationnelles": [],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 87,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Nettoyage et désinfection du bac à sel",
+        "risques": [
+          "Risque de projection d'eau"
+        ],
+        "risques_inrs": "07. Risques liés aux produits chimiques, aux émissions et aux déchets",
+        "equipement": "Adoucisseur",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Vêtement de travail couvrant",
+          "Gants anticoupure",
+          "vérifier les EPI recommandés de la FDS au préalable Rubrique 8",
+          "Lunette de sécurité."
+        ],
+        "formation_specifique": [
+          "Non applicable"
+        ],
+        "mesures_organisationnelles": [
+          "FDS des produits utilisés",
+          "Procedure substance dangeureuse COSH",
+          "Alayse de risque produit chimique Seirich"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 88,
+        "principales_operations": "Traitement de l'eau",
+        "facteur_exposition": "Vérifier intégrité des disconnecteurs / recherche de fuite",
+        "risques": [
+          "Heurt / choc"
+        ],
+        "risques_inrs": "05. Risques liés à la manutention manuelle de charge",
+        "equipement": "Disconnecteur sur eau d’appoint",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Raccordement dans les règles de l'art - tuyauterie d'évacuation des l'eau",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité SRC3c/ vêtement de travail/ casquette de sécurité"
+        ],
+        "formation_specifique": [
+          "Non applicable"
+        ],
+        "mesures_organisationnelles": [
+          "Non applicable"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 89,
+        "principales_operations": "Vannes, vanne motorisée, électrovannes, clapets anti-retour, pompe de recirculation",
+        "facteur_exposition": "Vérifier l’état général (usure, tartre, corrosion...) et le bon fonctionnement",
+        "risques": [
+          "TMS / heurt / choc / ecrasement"
+        ],
+        "risques_inrs": "05. Risques liés à la manutention manuelle de charge",
+        "equipement": "Vannes, vanne motorisée, électrovannes, clapets anti-retour…",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Raccordement dans les règles de l'art - tuyauterie d'évacuation des l'eau",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité SRC3c/ vêtement de travail/ casquette de sécurité"
+        ],
+        "formation_specifique": [
+          "Non applicable"
+        ],
+        "mesures_organisationnelles": [
+          "Non applicable"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 90,
+        "principales_operations": "Réseau d'eau",
+        "facteur_exposition": "Purger les réseaux, y compris points bas",
+        "risques": [
+          "Pression / glissade / chute de plain pied"
+        ],
+        "risques_inrs": "01. Risques de chute de plain-pied (trébuchement, heurt ou autre perturbation de mouvement)",
+        "equipement": "Réseau",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Raccordement dans les règles de l'art - tuyauterie d'évacuation des l'eau",
+        "regles_qui_sauvent": [
+          "non"
+        ],
+        "epc_epi": [
+          "Chaussures de sécurité SRC3c/ vêtement de travail/ casquette de sécurité"
+        ],
+        "formation_specifique": [
+          "Non applicable"
+        ],
+        "mesures_organisationnelles": [
+          "Non applicable"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 91,
+        "principales_operations": "Travaux en hauteur",
+        "facteur_exposition": "Travail sur toiture",
+        "risques": [
+          "Chute de hauteur / chute d'objet"
+        ],
+        "risques_inrs": "02. Risques de chutes de hauteur",
+        "equipement": "Toiture",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Gardes-corps\nPrésence de points d'ancrage ou d'une ligne de vie",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)",
+          "Regle 5 - Travail en hauteur"
+        ],
+        "epc_epi": [
+          "Casque / Chaussure de sécurité / gants de travail / Lunettes de sécurité",
+          "Port du harnais en cas d'absence de grade corps et à proximité des skydome non muni de barreaux anti-chute"
+        ],
+        "formation_specifique": [
+          "Si absence de garde-corps - formation au port du harnais et travaux en hauteur"
+        ],
+        "mesures_organisationnelles": [
+          "Analyse de risque avant travaux ou RAD",
+          "Vérification de l'équipement avant utilisation (état de conservation, présence de l'ensemble des pièces, stabilité)",
+          "Verification annuele reglementaire des harnais longes et mousquetons",
+          "Matériel ressencé et référencé",
+          "Permis de travail en hauteur",
+          "EA : verification des compétences"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 92,
+        "principales_operations": "Tout travail",
+        "facteur_exposition": "Travail sous pression",
+        "risques": [
+          "Risques psychsociaux"
+        ],
+        "risques_inrs": "17. Risques Psychosociaux",
+        "equipement": "Tout équipement",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "Non"
+        ],
+        "epc_epi": [
+          "Non applicable"
+        ],
+        "formation_specifique": [
+          "Formation des managers à l'identification des salariés en détresse psychologique"
+        ],
+        "mesures_organisationnelles": [
+          "Moka Care - soutien psychologique",
+          "Droit à la déconnexion"
+        ],
+        "further_actions": [
+          "Engager des mesures concrète d'organisation du travail, de formation des salariés et de communication interne"
+        ],
+        "comment": []
+      },
+      {
+        "ligne_source": 93,
+        "principales_operations": "Tout travail",
+        "facteur_exposition": "- Conflits\n- Isolement\n- Pression de la hiérarchie\n- Objectifs professionnels non smart\n- Harcèlement\n- Surcharge d'heures de travail",
+        "risques": [
+          "Traumatismes physique et /ou psychique, dépression,",
+          "Burn out,  pathologie aigue ou chroniques lié au stress, troubles psychosomatique, risque de suicide"
+        ],
+        "risques_inrs": "17. Risques Psychosociaux",
+        "equipement": "Tout équipement",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "Non"
+        ],
+        "epc_epi": [
+          "Non applicable"
+        ],
+        "formation_specifique": [
+          "Formation des managers à l'identification des salariés en détresse psychologique"
+        ],
+        "mesures_organisationnelles": [
+          "Moka Care - soutien psychologique",
+          "Droit à la déconnexion"
+        ],
+        "further_actions": [
+          "Engager des mesures concrète d'organisation du travail, de formation des salariés et de communication interne"
+        ],
+        "comment": []
+      },
+      {
+        "ligne_source": 94,
+        "principales_operations": "Déplacement d'astreinte / Travail de nuit occasionnel",
+        "facteur_exposition": "Tavail isolé",
+        "risques": [
+          "RPS",
+          "Fatigue et Troubles du sommeil",
+          "Accident de la route"
+        ],
+        "risques_inrs": "20. Risques liés aux rythmes de travail spécifiques (travail de nuit, équipe successive, etc.)",
+        "equipement": "Tout équipement",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "Non"
+        ],
+        "epc_epi": [
+          "Non applicable"
+        ],
+        "formation_specifique": [
+          "Non applicable"
+        ],
+        "mesures_organisationnelles": [
+          "Intervention interdite sur les sites ne disposant pas de gardiennage.",
+          "Astreinte non doublée car le nombre de sortie ne le justifie pas.",
+          "Contrôle chaque matin par le cadre d'astreinte pour surveiller le respect des temps de repos, debrief des opérations et des rapports, etc."
+        ],
+        "further_actions": [
+          "Rédaction et diffuson d'une note interne rappelant les règles et obligations"
+        ],
+        "comment": []
+      },
+      {
+        "ligne_source": 95,
+        "principales_operations": "Déplacement zone peu fréquenté, sans visuel",
+        "facteur_exposition": "Tavail isolé",
+        "risques": [
+          "Ralentissement des secours"
+        ],
+        "risques_inrs": "20. Risques liés aux rythmes de travail spécifiques (travail de nuit, équipe successive, etc.)",
+        "equipement": "NA",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "Non"
+        ],
+        "epc_epi": [
+          "Possibilité de mise à disposition de DATI ( application mobile sur smartphone)"
+        ],
+        "formation_specifique": [],
+        "mesures_organisationnelles": [
+          "Organisation du travail :constitution d’équipes ou de binômes",
+          "Moyens de communication: dispositifs d’alarme (DATI)",
+          "Surveillance :des passages périodiques d’une autre personne",
+          "information : Former les travailleurs isolés sur les risques spécifiques à leur poste et les procédures à suivre en cas d’urgence"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 96,
+        "principales_operations": "Travail de nuit habituel ou équipe successive",
+        "facteur_exposition": "Travail isolé",
+        "risques": [
+          "RPS",
+          "Fatigue et Troubles du sommeil",
+          "Accident de la route"
+        ],
+        "risques_inrs": "20. Risques liés aux rythmes de travail spécifiques (travail de nuit, équipe successive, etc.)",
+        "equipement": "Tout équipement",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "Non"
+        ],
+        "epc_epi": [
+          "Non applicable"
+        ],
+        "formation_specifique": [
+          "Non applicable"
+        ],
+        "mesures_organisationnelles": [
+          "Surveillance médicale renforcée",
+          "Aménagement du temps de travail pour limiter le nombre de nuits réalisées"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 97,
+        "principales_operations": "Télétravail",
+        "facteur_exposition": "Travail isolé",
+        "risques": [
+          "Isolement social et professionnel : Sentiment d'abandon et perte de lien avec l'équipe.",
+          "Déséquilibre vie pro/perso : Difficulté à déconnecter, allongement du temps de travail, empiètement du travail sur la vie familiale.",
+          "Surcharge et stress : Objectifs flous ou inatteignables, management abusif ou contrôle excessif à distance.",
+          "Épuisement professionnel (Burn-out) : Risque accru lié à la difficulté de s'imposer des pauses."
+        ],
+        "risques_inrs": "17. Risques Psychosociaux",
+        "equipement": "Tout équipement",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Non applicable",
+        "regles_qui_sauvent": [
+          "Non"
+        ],
+        "epc_epi": [
+          "Aménagement : Fournir un matériel ergonomique (écran, chaise, clavier) et s'assurer de l'adéquation du lieu de travail."
+        ],
+        "formation_specifique": [
+          "Formation : Former les salariés et les managers aux outils numériques et à la gestion du travail à distance."
+        ],
+        "mesures_organisationnelles": [
+          "Organisation : Mettre en place un droit à la déconnexion effectif, définir des plages horaires de joignabilité et organiser des réunions régulières pour maintenir le lien.",
+          "Management : Adapter le suivi en se concentrant sur les résultats plutôt que sur le temps de connexion. Réaliser des entretiens annuels dédiés aux conditions de télétravail.",
+          "Routine : Pour le salarié, maintenir une routine (horaires fixes, pauses, se préparer) pour bien scinder vie pro et vie perso."
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 98,
+        "principales_operations": "Conduite de véhicule",
+        "facteur_exposition": "Circulation en 2 roue",
+        "risques": [
+          "Accident de la route"
+        ],
+        "risques_inrs": "04. Risques routiers en mission",
+        "equipement": "2 roues",
+        "fonctionnement": "Normal",
+        "mesures_conception": "Sécurité intrinsinque des VL",
+        "regles_qui_sauvent": [
+          "Règle 4 - Conduite"
+        ],
+        "epc_epi": [
+          "Dotation d'EPI spécialement conçus pour les 2 roues (casque, gants, blouson, bottes)"
+        ],
+        "formation_specifique": [
+          "Formation aux risques routiers"
+        ],
+        "mesures_organisationnelles": [
+          "Code de la route applicable à tous",
+          "Charte de conduite de vehicule CBRE",
+          "Maintenance des véhicules CBRE",
+          "Contrat de \"full maintenance\" intégré",
+          "Contrat intégrant pneumatiques été/hiver"
+        ],
+        "further_actions": [
+          "Procédure de vérification (checklist) des véhicules à réaliser par les managers à remettreen place"
+        ],
+        "comment": []
+      },
+      {
+        "ligne_source": 99,
+        "principales_operations": "Exposition aux risques biologiques",
+        "facteur_exposition": "Exposition à la légionnelle Eau Chaude sanitaire (Maintenance)",
+        "risques": [
+          "Maladie professionnelle / légionnelose"
+        ],
+        "risques_inrs": "08. Risques liés aux agents biologiques",
+        "equipement": "ECS",
+        "fonctionnement": "Normal",
+        "mesures_conception": null,
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)"
+        ],
+        "epc_epi": [
+          "Masque FFP3",
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité"
+        ],
+        "formation_specifique": [
+          "Formation  aux risques légionnelles",
+          "Formation Talent Coach legionelle",
+          "Formation The Academy eau et legionelle"
+        ],
+        "mesures_organisationnelles": [
+          "Logbook Water & Legionella afin de maîtriser le risque pour les utilisateurs.",
+          "Sensibiliser à consultez rapidement un médecin en cas de signes évocateurs de la maladie (pneumonie sévère, toux sèche, maux de tête, fièvre élevée, fatigue, etc.)",
+          "Respect de la procedure CBRE Hygiène de l'eau pour prevenir et surveiller la présence de legionelle dans les réseaux.",
+          "Mise en place du Carnet Sanitaire"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 100,
+        "principales_operations": "Exposition aux risques biologiques",
+        "facteur_exposition": "Exposition à la légionnelle operation des Tours",
+        "risques": [
+          "Maladie professionnelle / légionnelose"
+        ],
+        "risques_inrs": "08. Risques liés aux agents biologiques",
+        "equipement": "Tour Aéroréfrigérante",
+        "fonctionnement": "Normal",
+        "mesures_conception": null,
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)"
+        ],
+        "epc_epi": [
+          "Masque FFP3",
+          "Casquette coquée",
+          "Chaussure de sécurité",
+          "Gants",
+          "Lunettes de sécurité"
+        ],
+        "formation_specifique": [
+          "Formation aux risques légionnelles",
+          "Formation Talent Coach legionelle",
+          "Formation The Academy eau et legionelle",
+          "Coorditateur :  formation (réglementaire) pour les responsables du management de la légionelle des Tours Aéroréfrigérente, ainsi qu'aux procedure CBRE Hygiène de l'eau pour prevenir et surveiller la présence de legionelle"
+        ],
+        "mesures_organisationnelles": [
+          "Logbook Water & Legionella afin de maîtriser le risque pour les utilisateurs.",
+          "Sensibiliser à consultez rapidement un médecin en cas de signes évocateurs de la maladie (pneumonie sévère, toux sèche, maux de tête, fièvre élevée, fatigue, etc.)",
+          "Respect de la procedure CBRE Hygiène de l'eau pour prevenir et surveiller la présence de legionelle dans les réseaux.",
+          "Mise en place du Carnet Sanitaire"
+        ],
+        "further_actions": [],
+        "comment": []
+      },
+      {
+        "ligne_source": 101,
+        "principales_operations": "Exposition aux risques electrique",
+        "facteur_exposition": "Court circuit",
+        "risques": [
+          "electrisation"
+        ],
+        "risques_inrs": "14. Risques liés à l'électricité",
+        "equipement": "equipements electriques defectueux",
+        "fonctionnement": "dégradé",
+        "mesures_conception": "tableau electrique fermé",
+        "regles_qui_sauvent": [
+          "Règle 1 - Autorisation  de Travail ( compétence)"
+        ],
+        "epc_epi": [
+          "tableau electrique fermé"
+        ],
+        "formation_specifique": [
+          "Core safety training : l'electricité"
+        ],
+        "mesures_organisationnelles": [
+          "Procedure WKEQ"
+        ],
+        "further_actions": [],
+        "comment": []
+      }
+    ]
+  }
+}
