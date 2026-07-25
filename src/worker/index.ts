@@ -4,6 +4,13 @@ import { sitesRoutes } from './routes/sites';
 import { planPreventionRoutes, planPreventionDocRoutes } from './routes/plan-prevention';
 import { entreprisesRoutes } from './routes/entreprises';
 import { duerRoutes, duerDocRoutes } from './routes/duer';
+import { famillesRisquesRoutes } from './routes/familles-risques';
+import {
+  modesOperatoiresSiteRoutes,
+  modesOperatoiresRoutes,
+  moTachesRoutes,
+  moAnalyseLignesRoutes
+} from './routes/modes-operatoires';
 
 export interface Env {
   DB: D1Database;
@@ -27,6 +34,11 @@ app.route('/api/plan-prevention', planPreventionDocRoutes);
 app.route('/api/entreprises', entreprisesRoutes);
 app.route('/api/entreprises', duerRoutes);
 app.route('/api/duer', duerDocRoutes);
+app.route('/api/familles-risques', famillesRisquesRoutes);
+app.route('/api/sites', modesOperatoiresSiteRoutes);
+app.route('/api/modes-operatoires', modesOperatoiresRoutes);
+app.route('/api/mo-taches', moTachesRoutes);
+app.route('/api/mo-analyse-lignes', moAnalyseLignesRoutes);
 
 app.notFound((c) => c.json({ error: 'Route API inconnue' }, 404));
 
