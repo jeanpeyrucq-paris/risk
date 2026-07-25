@@ -8,14 +8,29 @@ de risques INRS.
 
 Le produit complet prevoit 5 rubriques : (A) Plan de prevention du site, (B) DUER de
 l'entreprise, (C) Analyse des risques (comparaison A/B), (D) Mode operatoire securite,
-(E) Informations. **A, B, D et E sont construits. Seul C reste volontairement reporte**
-(grise "a venir" sur la page d'accueil) — il necessite de croiser le plan de prevention et
-le DUER, ce qui n'a pas encore ete specifie.
+(E) Informations. **Les 5 modules sont construits.**
 
-Le schema de donnees anticipe neanmoins le module C : chaque ligne de plan de prevention et
-chaque tache DUER porte un `inrs_category_id` optionnel, pointant vers la meme table de
-reference des 20 categories INRS — c'est le concept partage dont C aura besoin pour comparer
-les risques des deux documents.
+## Module C : analyse des risques (comparaison plan de prevention / DUER)
+
+Compare, categorie INRS par categorie INRS, le plan de prevention d'un site et le DUER d'une
+entreprise. Decisions de conception (aucun precedent a reutiliser, donc explicitees ici) :
+
+- **Lien site↔entreprise** : table `analyses` (`site_id`, `entreprise_id`), creee par
+  l'utilisateur en choisissant les deux dans des listes deroulantes existantes — le module ne
+  cree ni site ni entreprise, ceux-ci doivent deja exister (modules A/B).
+- **Granularite = categorie INRS**, pas ligne/tache individuelle : une carte de comparaison par
+  categorie ayant au moins une ligne de plan de prevention concernee (`concerne=1`) classee
+  dans cette categorie. Une categorie presente uniquement cote DUER (aucune ligne PP) n'est
+  pas listee — l'ancrage est toujours le plan de prevention, comme demande.
+- **Rien n'est duplique/persiste cote comparaison** : les lignes PP et taches DUER
+  correspondantes sont recherchees en direct via `inrs_category_id` a chaque lecture (la
+  "couverture" — couvert / non traite dans le DUER — est donc toujours a jour). Seule la
+  decision de l'utilisateur (`procedure_source`, `analyse_hse`, `statut_procedure_client`)
+  est stockee, uniquement si renseignee (`PATCH` en upsert, pas de pre-creation systematique).
+
+L'export Excel est genere de zero (control-style), aucun modele client fourni pour ce module.
+
+## Module D : mode operatoire + analyse ERPT
 
 ## Module D : mode operatoire + analyse ERPT
 
@@ -96,19 +111,24 @@ n'egalent pas 13 rubriques / 42 lignes, 92 taches, et les comptages exacts des d
 - **Analyse ERPT** (`.../export?type=analyse`) : classeur reprenant la mise en page du modele
   reel (colonnes B a Z calculees et remplies ; colonne AA, la note finale Rr, laissee vide —
   voir "Module D" ci-dessus).
+- **Analyse des risques** (`GET /api/analyses/:id/export`) : classeur genere de zero, une ligne
+  par categorie INRS (couverture, mesures des deux cotes, procedure choisie, analyse HSE,
+  statut).
 
 ## Structure
 
 ```
 src/worker/index.ts                  point d'entree Hono, montage des routes
 src/worker/routes/*.ts               un fichier par ressource (sites, entreprises, plan-prevention,
-                                      duer, inrs-categories, familles-risques, modes-operatoires)
+                                      duer, inrs-categories, familles-risques, modes-operatoires, analyses)
 src/worker/xlsx-export.ts            export "controle" (plan de prevention + DUER, classeurs generes)
 src/worker/xlsx-template-export.ts   export DUER dans le vrai modele client
 src/worker/xlsx-mode-operatoire-export.ts  export mode operatoire + analyse ERPT
+src/worker/xlsx-analyse-export.ts    export analyse des risques (module C)
 src/worker/mo-cotation.ts            formules de cotation partagees (API + export)
 migrations/0001_init.sql             schema D1 modules A/B + seed des 20 categories INRS
 migrations/0002_mode_operatoire.sql  schema D1 module D + seed des 16 familles de risques
+migrations/0003_analyse.sql          schema D1 module C
 public/                              pages HTML + assets (JS vanilla, tmf.css)
 fixtures/                            fixtures JSON/JS reelles utilisees pour le seed/smoke test
 scripts/seed.mjs                     seed via les endpoints d'import (voir ci-dessus)
