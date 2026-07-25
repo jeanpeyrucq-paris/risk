@@ -1,0 +1,27 @@
+import { Hono } from 'hono';
+import { inrsCategoriesRoutes } from './routes/inrs-categories';
+import { sitesRoutes } from './routes/sites';
+import { planPreventionRoutes, planPreventionDocRoutes } from './routes/plan-prevention';
+import { entreprisesRoutes } from './routes/entreprises';
+import { duerRoutes, duerDocRoutes } from './routes/duer';
+
+export interface Env {
+  DB: D1Database;
+  ASSETS: Fetcher;
+}
+
+const app = new Hono<{ Bindings: Env }>();
+
+app.get('/api/health', (c) => c.json({ ok: true }));
+
+app.route('/api/inrs-categories', inrsCategoriesRoutes);
+app.route('/api/sites', sitesRoutes);
+app.route('/api/sites', planPreventionRoutes);
+app.route('/api/plan-prevention', planPreventionDocRoutes);
+app.route('/api/entreprises', entreprisesRoutes);
+app.route('/api/entreprises', duerRoutes);
+app.route('/api/duer', duerDocRoutes);
+
+app.notFound((c) => c.json({ error: 'Route API inconnue' }, 404));
+
+export default app;
