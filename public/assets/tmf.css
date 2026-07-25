@@ -170,6 +170,19 @@ footer{border-top:1px solid var(--line); padding:28px 0; display:flex; justify-c
 .admin-table tr:last-child td{border-bottom:none;}
 .admin-table tr:hover td{background:var(--panel-2);}
 
+.table-scroll{overflow-x:auto; max-width:100%;}
+.table-scroll .admin-table{min-width:1400px;}
+
+/* form controls used directly inside table cells (edit views) */
+.admin-table textarea, .admin-table input, .admin-table select{
+  width:100%; min-width:140px; background:#ffffff; border:1px solid #d8ddda; color:#1c2420;
+  border-radius:2px; padding:8px 10px; font-size:13px; font-family:'IBM Plex Sans', sans-serif;
+}
+.admin-table textarea{min-height:64px; resize:vertical;}
+.admin-table td{min-width:120px;}
+.admin-table td:last-child{min-width:200px; white-space:nowrap;}
+.admin-table textarea:focus, .admin-table input:focus, .admin-table select:focus{outline:none; border-color:var(--green);}
+
 /* rubrique / accordion */
 .rubrique{background:#ffffff; border:1px solid #e2e7e4; border-radius:8px; margin-bottom:16px; overflow:hidden;}
 .rubrique summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; padding:18px 22px; font-family:'Oswald', sans-serif; font-weight:600; font-size:16px; color:#12312a; background:#f4f6f5;}

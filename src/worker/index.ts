@@ -12,6 +12,12 @@ export interface Env {
 
 const app = new Hono<{ Bindings: Env }>();
 
+app.get('/', async (c) => {
+  const url = new URL(c.req.url);
+  url.pathname = '/index.html';
+  return c.env.ASSETS.fetch(new Request(url.toString(), c.req.raw));
+});
+
 app.get('/api/health', (c) => c.json({ ok: true }));
 
 app.route('/api/inrs-categories', inrsCategoriesRoutes);

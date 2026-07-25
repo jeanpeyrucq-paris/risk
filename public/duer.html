@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DUER — risk-control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tmf.css">
+</head>
+<body>
+
+<header class="appbar">
+  <div class="wrap appbar-inner">
+    <a href="/" class="brand">risk-control</a>
+    <nav class="nav-links">
+      <a href="/">Accueil</a>
+      <a href="/plan-prevention.html">Plan de prevention</a>
+      <a href="/duer.html" class="active">DUER</a>
+    </nav>
+  </div>
+</header>
+
+<header class="page-head blueprint">
+  <div class="wrap">
+    <div class="eyebrow">Module B</div>
+    <h1>Le DUER de mon entreprise</h1>
+    <p>Le Document Unique d'Evaluation des Risques : principales operations, risques, mesures de prevention et de protection, classes selon les categories INRS.</p>
+  </div>
+</header>
+
+<section class="light-band">
+  <div class="wrap">
+
+    <div class="form-card" style="margin-bottom:32px;">
+      <div class="form-grid">
+        <div class="field">
+          <label for="entreprise-select">Entreprise</label>
+          <select id="entreprise-select"></select>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button class="btn btn-ghost" id="new-entreprise-toggle" type="button">+ Nouvelle entreprise</button>
+        </div>
+      </div>
+
+      <form id="new-entreprise-form" hidden style="margin-top:20px;">
+        <div class="form-grid single">
+          <div class="field">
+            <label for="entreprise-nom">Nom de l'entreprise</label>
+            <input id="entreprise-nom" required placeholder="ex : CBRE GWS France SAS">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Enregistrer l'entreprise</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="entreprise-content"></div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
+    <span>risk-control — CBRE HSE</span>
+    <a href="/" class="mono">← Accueil</a>
+  </div>
+</footer>
+
+<script type="module" src="/assets/duer.js"></script>
+</body>
+</html>

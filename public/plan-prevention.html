@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de prevention — risk-control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tmf.css">
+</head>
+<body>
+
+<header class="appbar">
+  <div class="wrap appbar-inner">
+    <a href="/" class="brand">risk-control</a>
+    <nav class="nav-links">
+      <a href="/">Accueil</a>
+      <a href="/plan-prevention.html" class="active">Plan de prevention</a>
+      <a href="/duer.html">DUER</a>
+    </nav>
+  </div>
+</header>
+
+<header class="page-head blueprint">
+  <div class="wrap">
+    <div class="eyebrow">Module A</div>
+    <h1>Le plan de prevention du site</h1>
+    <p>Les regles a respecter pour intervenir chez un client : conditions d'intervention, et pour chaque rubrique les dangers, risques et moyens de prevention.</p>
+  </div>
+</header>
+
+<section class="light-band">
+  <div class="wrap">
+
+    <div class="form-card" style="margin-bottom:32px;">
+      <div class="form-grid">
+        <div class="field">
+          <label for="site-select">Site</label>
+          <select id="site-select"></select>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button class="btn btn-ghost" id="new-site-toggle" type="button">+ Nouveau site</button>
+        </div>
+      </div>
+
+      <form id="new-site-form" hidden style="margin-top:20px;">
+        <div class="form-grid">
+          <div class="field">
+            <label for="site-nom">Nom du site</label>
+            <input id="site-nom" required placeholder="ex : Sanofi VITRY RD">
+          </div>
+          <div class="field">
+            <label for="site-adresse">Adresse</label>
+            <input id="site-adresse" placeholder="optionnel">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Enregistrer le site</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="site-content"></div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
+    <span>risk-control — CBRE HSE</span>
+    <a href="/" class="mono">← Accueil</a>
+  </div>
+</footer>
+
+<script type="module" src="/assets/plan-prevention.js"></script>
+</body>
+</html>
