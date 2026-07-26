@@ -1,4 +1,4 @@
-import { api, linesToArray, arrayToLines, el } from './app.js';
+import { api, linesToArray, arrayToLines, el, renderConditionsIntervention } from './app.js';
 
 let inrsCategories = [];
 let currentSiteId = null;
@@ -121,6 +121,11 @@ function renderDocument(doc) {
     el('a', { class: 'btn btn-primary btn-sm', href: `/api/plan-prevention/documents/${doc.id}/export` }, 'Exporter Excel')
   ]);
   wrap.appendChild(header);
+
+  const conditionsDetails = el('details', { class: 'rubrique', id: 'conditions-intervention' });
+  conditionsDetails.appendChild(el('summary', {}, "Conditions d'intervention"));
+  conditionsDetails.appendChild(el('div', { class: 'rubrique-body' }, renderConditionsIntervention(doc.conditions_intervention)));
+  wrap.appendChild(conditionsDetails);
 
   for (const rub of doc.rubriques) {
     wrap.appendChild(rub.type === 'gestion_dechets' ? renderGestionDechets(rub) : renderRubrique(rub));

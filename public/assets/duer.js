@@ -1,4 +1,4 @@
-import { api, linesToArray, arrayToLines, el } from './app.js';
+import { api, linesToArray, arrayToLines, el, renderConditionsIntervention } from './app.js';
 
 let inrsCategories = [];
 
@@ -7,9 +7,45 @@ const newEntrepriseToggle = document.getElementById('new-entreprise-toggle');
 const newEntrepriseForm = document.getElementById('new-entreprise-form');
 const entrepriseContent = document.getElementById('entreprise-content');
 
+const conditionsLink = document.getElementById('conditions-intervention-link');
+const conditionsPanel = document.getElementById('conditions-intervention-panel');
+const conditionsSiteSelect = document.getElementById('conditions-site-select');
+const conditionsContent = document.getElementById('conditions-intervention-content');
+
 async function init() {
   inrsCategories = await api('/inrs-categories');
   await refreshEntreprises();
+  await initConditionsIntervention();
+}
+
+async function initConditionsIntervention() {
+  const sites = await api('/sites');
+  conditionsSiteSelect.innerHTML = '';
+  conditionsSiteSelect.appendChild(el('option', { value: '' }, '— choisir un site —'));
+  for (const s of sites) conditionsSiteSelect.appendChild(el('option', { value: s.id }, s.nom));
+
+  conditionsLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    conditionsPanel.hidden = !conditionsPanel.hidden;
+    conditionsLink.textContent = conditionsPanel.hidden
+      ? "→ Afficher les conditions d'intervention d'un site"
+      : "→ Masquer les conditions d'intervention";
+  });
+
+  conditionsSiteSelect.addEventListener('change', async () => {
+    const siteId = conditionsSiteSelect.value;
+    conditionsContent.innerHTML = '';
+    if (!siteId) return;
+    conditionsContent.textContent = 'Chargement...';
+    try {
+      const doc = await api(`/sites/${siteId}/plan-prevention`);
+      conditionsContent.innerHTML = '';
+      conditionsContent.appendChild(renderConditionsIntervention(doc.conditions_intervention));
+    } catch {
+      conditionsContent.innerHTML = '';
+      conditionsContent.appendChild(el('p', { class: 'hint' }, "Ce site n'a pas encore de plan de prevention importe (module A)."));
+    }
+  });
 }
 
 async function refreshEntreprises(selectId = null) {
