@@ -1,7 +1,8 @@
-// Seeds the local dev database with the two real fixtures, via the actual
-// import endpoints (not raw SQL) so this also serves as an end-to-end
-// smoke test of the import parsers. Requires `wrangler dev` running locally
-// (npm run dev, port 8787 by default; override with PORT=xxxx).
+// Seeds a database with the two real fixtures, via the actual import
+// endpoints (not raw SQL) so this also serves as an end-to-end smoke test of
+// the import parsers. Targets local dev by default (npm run dev, port 8787;
+// override with PORT=xxxx); pass BASE_URL=https://... to seed a deployed
+// Worker instead.
 import { readFile } from 'node:fs/promises';
 import {
   modeOperatoireCTA,
@@ -12,7 +13,7 @@ import {
   modeOperatoireCTAAvecCourroies
 } from '../fixtures/mode-operatoires-site-test.mjs';
 
-const base = `http://localhost:${process.env.PORT || 8787}`;
+const base = process.env.BASE_URL || `http://localhost:${process.env.PORT || 8787}`;
 
 async function postJson(path, body) {
   const res = await fetch(base + path, {

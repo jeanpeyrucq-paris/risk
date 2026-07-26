@@ -4,6 +4,12 @@ Outil interne CBRE HSE pour gerer le **plan de prevention** d'un site client et 
 (Document Unique d'Evaluation des Risques) de l'entreprise, classes selon les 20 categories
 de risques INRS.
 
+**Deploye sur Cloudflare Workers sous le nom `riskassist`** :
+[riskassist.jean-peyrucq.workers.dev](https://riskassist.jean-peyrucq.workers.dev). Le Worker
+deploye reutilise la base D1 existante `risk-control-db` (le compte etait au plafond du nombre
+de bases D1 autorisees, donc pas de base separee creee pour la prod) ; le dossier local, le
+`package.json` et le depot GitHub (`jeanpeyrucq-paris/risk`) gardent le nom `risk-control-app`.
+
 ## Perimetre de cette version
 
 Le produit complet prevoit 5 rubriques : (A) Plan de prevention du site, (B) DUER de
@@ -91,8 +97,12 @@ npm run db:seed:local                     # importe les deux fixtures reelles (v
 `npm run db:seed:local` suppose `npm run dev` deja lance sur le port 8787 (`PORT=xxxx npm run
 db:seed:local` sinon). Il importe les deux fixtures via les vrais endpoints d'import (pas de
 SQL brut), ce qui sert aussi de test de bout en bout : le script echoue si les comptages
-n'egalent pas 13 rubriques / 42 lignes, 92 taches, et les comptages exacts des deux exemples
-"Site TEST" (9/17/16 taches-lignes et 4/16/15).
+n'egalent pas 13 rubriques / 42 lignes, 92 taches, et les comptages exacts des 6 exemples
+"Site TEST".
+
+Pour seeder une instance deployee plutot que le dev local :
+`BASE_URL=https://riskassist.jean-peyrucq.workers.dev node scripts/seed.mjs`
+(c'est ainsi que la prod a ete initialement peuplee).
 
 ## Modes d'export
 
