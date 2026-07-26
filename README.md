@@ -82,7 +82,17 @@ freres `talentops` et `propulse-rdv`. Charte graphique (`public/assets/tmf.css`)
 Export Excel via [SheetJS](https://sheetjs.com) (`xlsx`, installe depuis le CDN officiel
 SheetJS plutot que le registre npm — la derniere version publiee sur npm, 0.18.5, porte des
 vulnerabilites connues sans correctif ; SheetJS distribue les versions patchees uniquement
-via son propre CDN depuis la fin de sa publication sur npm).
+via son propre CDN depuis la fin de sa publication sur npm) pour les classeurs generes de
+zero (plan de prevention, DUER "tableau", mode operatoire, analyse ERPT, analyse des
+risques).
+
+**L'export "modele DUER"** (voir ci-dessous) n'utilise pas SheetJS : verifie experimentalement
+(y compris sur un aller-retour lecture/ecriture sans aucune modification), SheetJS Community
+Edition ne preserve pas la mise en forme des cellules a l'ecriture — police, remplissage,
+retour a la ligne et bordures repassent systematiquement aux valeurs par defaut. Cet export
+patch donc directement le XML du classeur modele (`fflate` pour dezip/rezip, remplacement
+cible du contenu des cellules gerees uniquement, en conservant leur attribut de style
+d'origine) — la mise en forme du modele est ainsi preservee a l'identique.
 
 ## Demarrage
 
