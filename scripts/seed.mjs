@@ -3,7 +3,14 @@
 // smoke test of the import parsers. Requires `wrangler dev` running locally
 // (npm run dev, port 8787 by default; override with PORT=xxxx).
 import { readFile } from 'node:fs/promises';
-import { modeOperatoireCTA, modeOperatoirePanne } from '../fixtures/mode-operatoires-site-test.mjs';
+import {
+  modeOperatoireCTA,
+  modeOperatoirePanne,
+  modeOperatoirePompesAVide,
+  modeOperatoireMotopompeSprinkler,
+  modeOperatoireTraitementEau,
+  modeOperatoireCTAAvecCourroies
+} from '../fixtures/mode-operatoires-site-test.mjs';
 
 const base = `http://localhost:${process.env.PORT || 8787}`;
 
@@ -96,6 +103,10 @@ async function main() {
 
   await seedModeOperatoire(siteTest.id, modeOperatoireCTA, famillesByName);
   await seedModeOperatoire(siteTest.id, modeOperatoirePanne, famillesByName);
+  await seedModeOperatoire(siteTest.id, modeOperatoirePompesAVide, famillesByName);
+  await seedModeOperatoire(siteTest.id, modeOperatoireMotopompeSprinkler, famillesByName);
+  await seedModeOperatoire(siteTest.id, modeOperatoireTraitementEau, famillesByName);
+  await seedModeOperatoire(siteTest.id, modeOperatoireCTAAvecCourroies, famillesByName);
 
   console.log('Seed termine avec succes.');
 }
