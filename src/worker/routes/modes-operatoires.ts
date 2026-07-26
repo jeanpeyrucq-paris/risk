@@ -2,7 +2,6 @@ import { Hono } from 'hono';
 import type { Env } from '../index';
 import { computeCotationDerived } from '../mo-cotation';
 import { buildModeOperatoireWorkbook, buildAnalyseWorkbook } from '../xlsx-mode-operatoire-export';
-import { workbookToBuffer } from '../xlsx-export';
 
 // Mounted at /api/sites — handles /:siteId/modes-operatoires
 export const modesOperatoiresSiteRoutes = new Hono<{ Bindings: Env }>();
@@ -293,8 +292,9 @@ modesOperatoiresRoutes.get('/:id/export', async (c) => {
   const { results: familles } = await c.env.DB.prepare('SELECT id, libelle FROM familles_risques').all<{ id: number; libelle: string }>();
   for (const f of familles) famillesMap.set(f.id, f.libelle);
 
-  const wb = type === 'analyse' ? buildAnalyseWorkbook(full, famillesMap) : buildModeOperatoireWorkbook(full);
-  const buf = workbookToBuffer(wb);
+  const buf = type === 'analyse'
+    ? await buildAnalyseWorkbook(c.env.ASSETS, full, famillesMap)
+    : await buildModeOperatoireWorkbook(c.env.ASSETS, full);
   const filename = `${type}-${(full.intitule_poste || 'mode-operatoire').replace(/[^a-z0-9]+/gi, '-')}.xlsx`;
 
   return new Response(buf, {

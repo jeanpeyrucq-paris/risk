@@ -11,7 +11,7 @@ const siteContent = document.getElementById('site-content');
 // Mirrors src/worker/mo-cotation.ts computeCotationDerived() for a live preview.
 function computeDerived(l) {
   const rp = l.f != null && l.p != null && l.g != null ? l.f * l.p * l.g : null;
-  const mt = l.cotation_epi != null && l.cotation_epc != null ? Math.min(l.cotation_epi, l.cotation_epc) : null;
+  const mt = l.cotation_epi != null && l.cotation_epc != null ? l.cotation_epi * l.cotation_epc : null;
   const foh = l.cotation_mo != null && l.cotation_mh != null ? l.cotation_mo * l.cotation_mh : null;
   const globale = mt != null && foh != null ? (mt + foh) / 2 : null;
   const niveau = globale != null ? (globale <= 0.5 ? 1 : (globale < 0.75 ? 2 : 3)) : null;

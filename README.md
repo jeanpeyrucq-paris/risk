@@ -38,20 +38,24 @@ L'export Excel est genere de zero (control-style), aucun modele client fourni po
 
 ## Module D : mode operatoire + analyse ERPT
 
-## Module D : mode operatoire + analyse ERPT
-
 Chaque mode operatoire (rattache a un site, comme le plan de prevention) regroupe :
 - des **taches** (tache / risque present / EPI / EPC / procedures / formations) ;
 - une **analyse ERPT**, deux blocs de lignes ("liee a l'activite" / "liee a l'environnement"),
   chacune pre-listant les 16 familles de risques fixes (table `familles_risques`), avec
   cotation F·P·G, EPI/EPC/mesures organisationnelles/mesures humaines et leurs cotations.
 
-Les formules de cotation ont ete retro-documentees a partir du vrai modele Excel
-(`C:\risk-control\doc\Evaluation des risques au poste de travail liée a l'activité.xlsx`) et
-verifiees sur 13 lignes reelles :
-`Rp = F×P×G`, `cotation MT = MIN(EPI, EPC)`, `cotation FOH = MO×MH`,
+Les formules de cotation ont ete confirmees en inspectant les formules Excel **reelles**
+embarquees dans le modele client (`Grille_analyse_risques_export.xlsx`, colonnes M/R/W/Y/Z -
+voir "Export mode operatoire / analyse ERPT" ci-dessous) :
+`Rp = F×P×G`, `cotation MT = EPI×EPC`, `cotation FOH = MO×MH`,
 `cotation globale = MOYENNE(MT, FOH)`, `niveau de maitrise` (seuils a 0,5 et 0,75),
 `Rr numerique = Rp × cotation globale`.
+
+**Correction** : une premiere version se basait sur un modele plus ancien et utilisait
+`MIN(EPI, EPC)` pour la cotation MT. Les deux formules donnent le meme resultat des que l'une
+des deux cotations vaut 1 (le cas "aucune mesure"), ce qui a masque l'erreur sur les exemples
+verifies a l'epoque. La formule reelle du classeur (`PRODUCT(O13,Q13)`) confirme qu'il s'agit
+d'un produit, pas d'un minimum ; corrige dans `mo-cotation.ts` et `mode-operatoire.js`.
 
 **Decision produit explicite : la note finale Rr (lettre F/M/S/C) n'est calculee nulle part
 dans l'application.** Elle reste une cellule vide dans l'export Excel, remplie manuellement
@@ -83,16 +87,37 @@ Export Excel via [SheetJS](https://sheetjs.com) (`xlsx`, installe depuis le CDN 
 SheetJS plutot que le registre npm — la derniere version publiee sur npm, 0.18.5, porte des
 vulnerabilites connues sans correctif ; SheetJS distribue les versions patchees uniquement
 via son propre CDN depuis la fin de sa publication sur npm) pour les classeurs generes de
-zero (plan de prevention, DUER "tableau", mode operatoire, analyse ERPT, analyse des
-risques).
+zero (plan de prevention, DUER "tableau", analyse des risques).
 
-**L'export "modele DUER"** (voir ci-dessous) n'utilise pas SheetJS : verifie experimentalement
-(y compris sur un aller-retour lecture/ecriture sans aucune modification), SheetJS Community
-Edition ne preserve pas la mise en forme des cellules a l'ecriture — police, remplissage,
-retour a la ligne et bordures repassent systematiquement aux valeurs par defaut. Cet export
-patch donc directement le XML du classeur modele (`fflate` pour dezip/rezip, remplacement
-cible du contenu des cellules gerees uniquement, en conservant leur attribut de style
-d'origine) — la mise en forme du modele est ainsi preservee a l'identique.
+**Les exports "modele"** (DUER, mode operatoire, analyse ERPT — voir ci-dessous) n'utilisent
+pas SheetJS : verifie experimentalement (y compris sur un aller-retour lecture/ecriture sans
+aucune modification), SheetJS Community Edition ne preserve pas la mise en forme des cellules
+a l'ecriture — police, remplissage, retour a la ligne et bordures repassent systematiquement
+aux valeurs par defaut. Ces exports patchent donc directement le XML des classeurs modeles
+(`fflate` pour dezip/rezip ; helpers communs dans `xlsx-xml-patch.ts`) : remplacement cible du
+contenu des cellules gerees uniquement, en conservant leur attribut de style d'origine — la
+mise en forme des modeles est ainsi preservee a l'identique.
+
+Le modele **analyse ERPT** (`Grille_analyse_risques_export.xlsx`) contient des **formules
+Excel vivantes** pour les colonnes derivees (Rp, cotation MT, cotation FOH, niveau de
+maitrise, Rr numerique) : ces cellules ne sont jamais ecrites par l'export, seules les
+cellules d'entree le sont (F/P/G, cotations EPI/EPC/MO/MH...), et Excel recalcule les
+formules a partir des nouvelles valeurs. Seule la colonne X (cotation globale) est une valeur
+figee dans ce modele (formule referencant un classeur externe non joint) et doit donc etre
+ecrite explicitement par l'application. Comme les valeurs mises en cache dans le modele
+d'origine deviendraient sinon perimees (Excel ne recalcule pas automatiquement a l'ouverture
+sauf indication contraire), l'export force `fullCalcOnLoad="1"` dans `workbook.xml`.
+
+Les blocs "liee a l'activite" (16 lignes) et "liee a l'environnement" (15 lignes) du modele
+ont une taille fixe qui ne correspond pas toujours au nombre reel de lignes d'analyse (les
+deux exemples seedes de "Site TEST" en comptent respectivement 17 et 16) : les lignes en
+surplus sont ajoutees a la suite de la derniere ligne du modele plutot que d'etre perdues,
+sans mise en forme specifique (cas limite, previsible mais rare).
+
+Le modele **mode operatoire** (`Mode_operatoire_securite_export.xlsx`) fusionne la cellule
+Tache (colonne A) sur les lignes de risque consecutives qui partagent la meme tache —
+l'export reconstruit ce fusionnement dynamiquement a partir des donnees (une tache vide ou
+identique a la precedente prolonge le groupe).
 
 ## Demarrage
 
@@ -126,11 +151,14 @@ Pour seeder une instance deployee plutot que le dev local :
   colonnes B/C/M/N/O/P/W/X/Y/AA/AC/AH/AI uniquement — les colonnes non gerees par
   l'application (unites de travail, frequence/probabilite/gravite, "en place ?", risque
   residuel) restent intactes, a completer manuellement.
-- **Mode operatoire** (`GET /api/modes-operatoires/:id/export?type=mode-operatoire`) : classeur
-  genere a partir de zero reprenant la mise en page du modele reel (tableau des taches).
-- **Analyse ERPT** (`.../export?type=analyse`) : classeur reprenant la mise en page du modele
-  reel (colonnes B a Z calculees et remplies ; colonne AA, la note finale Rr, laissee vide —
-  voir "Module D" ci-dessus).
+- **Mode operatoire** (`GET /api/modes-operatoires/:id/export?type=mode-operatoire`) : reinjecte
+  les donnees dans le vrai modele client (`public/templates/mode-operatoire-template.xlsx`),
+  avec fusion dynamique de la cellule Tache sur les lignes de risque consecutives.
+- **Analyse ERPT** (`.../export?type=analyse`) : reinjecte les donnees dans le vrai modele
+  client (`public/templates/analyse-erpt-template.xlsx`) — colonnes d'entree uniquement,
+  les colonnes a formule vivante (Rp, cotation MT/FOH, niveau de maitrise, Rr numerique) sont
+  recalculees par Excel ; colonne AA, la note finale Rr, laissee vide — voir "Module D"
+  ci-dessus.
 - **Analyse des risques** (`GET /api/analyses/:id/export`) : classeur genere de zero, une ligne
   par categorie INRS (couverture, mesures des deux cotes, procedure choisie, analyse HSE,
   statut).
@@ -142,8 +170,9 @@ src/worker/index.ts                  point d'entree Hono, montage des routes
 src/worker/routes/*.ts               un fichier par ressource (sites, entreprises, plan-prevention,
                                       duer, inrs-categories, familles-risques, modes-operatoires, analyses)
 src/worker/xlsx-export.ts            export "controle" (plan de prevention + DUER, classeurs generes)
+src/worker/xlsx-xml-patch.ts          helpers communs de patch XML (fflate) pour les exports "modele"
 src/worker/xlsx-template-export.ts   export DUER dans le vrai modele client
-src/worker/xlsx-mode-operatoire-export.ts  export mode operatoire + analyse ERPT
+src/worker/xlsx-mode-operatoire-export.ts  export mode operatoire + analyse ERPT dans les vrais modeles
 src/worker/xlsx-analyse-export.ts    export analyse des risques (module C)
 src/worker/mo-cotation.ts            formules de cotation partagees (API + export)
 migrations/0001_init.sql             schema D1 modules A/B + seed des 20 categories INRS

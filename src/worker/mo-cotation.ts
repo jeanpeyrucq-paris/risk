@@ -1,7 +1,8 @@
 // Derived cotation fields for the "analyse ERPT" lines of a mode operatoire.
-// Formulas reverse-engineered from the real template (verified against 13 filled
-// rows in `Evaluation des risques au poste de travail liée a l'activité.xlsx`):
-// Rp = F x P x G ; cotation MT = MIN(EPI, EPC) ; cotation FOH = MO x MH ;
+// Formulas confirmed from the live Excel formulas embedded in the real template
+// (`Grille_analyse_risques_export.xlsx`, e.g. row 13: M13=J13*K13*L13,
+// R13=PRODUCT(O13,Q13), W13=PRODUCT(T13,V13), Y13=IF(...), Z13=M13*X13):
+// Rp = F x P x G ; cotation MT = EPI x EPC ; cotation FOH = MO x MH ;
 // cotation globale = AVERAGE(MT, FOH) ; niveau de maitrise = thresholded on globale ;
 // Rr (numerique) = Rp x cotation globale.
 // The final Rr LETTER (F/M/S/C) is intentionally not computed anywhere in the
@@ -30,7 +31,7 @@ export interface AnalyseLigneCotationDerived {
 export function computeCotationDerived(l: AnalyseLigneCotationInput): AnalyseLigneCotationDerived {
   const rp = l.f != null && l.p != null && l.g != null ? l.f * l.p * l.g : null;
   const cotationMt = l.cotation_epi != null && l.cotation_epc != null
-    ? Math.min(l.cotation_epi, l.cotation_epc)
+    ? l.cotation_epi * l.cotation_epc
     : null;
   const cotationFoh = l.cotation_mo != null && l.cotation_mh != null
     ? l.cotation_mo * l.cotation_mh

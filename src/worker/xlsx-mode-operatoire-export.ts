@@ -1,154 +1,209 @@
-import * as XLSX from 'xlsx';
+import { unzipSync, zipSync, strFromU8, strToU8 } from 'fflate';
+import {
+  type CellUpdate, textCell, numberCell,
+  patchSheetXml, readRowStyles, replaceMergeCellsFrom, forceFullRecalcOnLoad
+} from './xlsx-xml-patch';
 
-function setCell(ws: XLSX.WorkSheet, addr: string, value: string | number | null | undefined) {
-  if (value === null || value === undefined || value === '') return;
-  ws[addr] = typeof value === 'number' ? { t: 'n', v: value } : { t: 's', v: String(value) };
+// Both exports patch the real client templates directly at the XML level
+// (see xlsx-xml-patch.ts / README) instead of building a workbook from scratch,
+// so the original formatting (fonts, fills, borders, merged cells) is preserved
+// exactly. This mirrors the fix already applied to the DUER "export modele".
+
+async function loadTemplateSheet1(assets: Fetcher, path: string, label: string) {
+  const res = await assets.fetch(new Request(`https://assets.local/${path}`));
+  if (!res.ok) throw new Error(`Modele ${label} introuvable (${path})`);
+  const buf = new Uint8Array(await res.arrayBuffer());
+  const files = unzipSync(buf);
+  return { files, sheetXml: strFromU8(files['xl/worksheets/sheet1.xml']) };
 }
 
-function extendRange(ws: XLSX.WorkSheet, rowIndex0: number, colIndex0: number) {
-  const ref = ws['!ref'] || 'A1:A1';
-  const range = XLSX.utils.decode_range(ref);
-  range.e.r = Math.max(range.e.r, rowIndex0);
-  range.e.c = Math.max(range.e.c, colIndex0);
-  ws['!ref'] = XLSX.utils.encode_range(range);
-}
+// ---------------------------------------------------------------------------
+// Mode operatoire export (public/templates/mode-operatoire-template.xlsx)
+// ---------------------------------------------------------------------------
+// Layout confirmed from the real template's raw XML: title merged A1:F2
+// (generic, untouched), Intitule du poste / Sous-activite on row 5, Personnes
+// concernees on row 6, headers on row 7, taches data from row 8. Column A
+// (tache name) is merged across the contiguous risque rows that share the
+// same tache, e.g. "A8:A9" in the template's own example.
 
-export function buildModeOperatoireWorkbook(mo: any): XLSX.WorkBook {
-  const wb = XLSX.utils.book_new();
-  const ws: XLSX.WorkSheet = {};
+const MO_COLS = ['A', 'B', 'C', 'D', 'E', 'F'];
+const MO_FIRST_DATA_ROW = 8;
+const MO_LAST_TEMPLATE_ROW = 11;
 
-  const titre = mo.sous_activite_libelle || `MODE OPERATOIRE SECURITE DE ${(mo.intitule_poste || '').toUpperCase()}`;
-  setCell(ws, 'A2', titre);
-  setCell(ws, 'B3', 'Intitule du poste');
-  setCell(ws, 'C3', mo.intitule_poste);
-  setCell(ws, 'E3', 'Sous-activite');
-  setCell(ws, 'F3', mo.sous_activite_code);
-  setCell(ws, 'C4', 'Personnes concernees');
-  setCell(ws, 'D4', mo.personnes_concernees);
-  if (mo.description_generale) {
-    setCell(ws, 'B4', 'Description generale');
-    setCell(ws, 'A4', mo.description_generale);
+export async function buildModeOperatoireWorkbook(assets: Fetcher, mo: any): Promise<Uint8Array> {
+  const { files, sheetXml: original } = await loadTemplateSheet1(
+    assets, 'templates/mode-operatoire-template.xlsx', 'mode operatoire'
+  );
+  let sheetXml = original;
+
+  const headerUpdates = new Map<number, Map<string, CellUpdate>>();
+  headerUpdates.set(5, new Map([
+    ['C', textCell(mo.intitule_poste || '')],
+    ['F', textCell([mo.sous_activite_code, mo.sous_activite_libelle].filter(Boolean).join(' '))]
+  ]));
+  headerUpdates.set(6, new Map([['D', textCell(mo.personnes_concernees || '')]]));
+  sheetXml = patchSheetXml(sheetXml, headerUpdates);
+
+  const fallbackStyle = readRowStyles(sheetXml, MO_LAST_TEMPLATE_ROW, MO_COLS);
+
+  const taches: any[] = mo.taches;
+  const rowUpdates = new Map<number, Map<string, CellUpdate>>();
+  const mergeRefs: string[] = [];
+  // A row continues the previous row's tache (same merged A-column group)
+  // either when its `tache` is blank/missing, or when it repeats the exact
+  // same tache text - both conventions are used across existing data.
+  let i = 0;
+  while (i < taches.length) {
+    const startRow = MO_FIRST_DATA_ROW + i;
+    let j = i + 1;
+    while (j < taches.length && (!taches[j].tache || taches[j].tache === taches[i].tache)) j++;
+    const endRow = MO_FIRST_DATA_ROW + (j - 1);
+    if (endRow > startRow) mergeRefs.push(`A${startRow}:A${endRow}`);
+
+    for (let k = i; k < j; k++) {
+      const row = MO_FIRST_DATA_ROW + k;
+      const updates = new Map<string, CellUpdate>();
+      if (k === i) updates.set('A', textCell(taches[k].tache || ''));
+      updates.set('B', textCell(taches[k].risque_present || ''));
+      updates.set('C', textCell(taches[k].epi || ''));
+      updates.set('D', textCell(taches[k].epc || ''));
+      updates.set('E', textCell(taches[k].procedures || ''));
+      updates.set('F', textCell(taches[k].formations || ''));
+      rowUpdates.set(row, updates);
+    }
+    i = j;
   }
 
-  const headerRow = 5;
-  const headers = ['Tache', 'Risque present', 'Equipement de Protection Individuelle a porter',
-    'Equipement de Protection Collective a utiliser', 'Procedures / Organisation a respecter',
-    'Formations / Habilitations necessaires'];
-  headers.forEach((h, i) => setCell(ws, XLSX.utils.encode_cell({ r: headerRow - 1, c: i }), h));
+  sheetXml = patchSheetXml(sheetXml, rowUpdates, fallbackStyle);
+  sheetXml = replaceMergeCellsFrom(sheetXml, MO_FIRST_DATA_ROW, mergeRefs);
 
-  mo.taches.forEach((t: any, i: number) => {
-    const r = headerRow + 1 + i; // 1-indexed row after header
-    setCell(ws, `A${r}`, t.tache);
-    setCell(ws, `B${r}`, t.risque_present);
-    setCell(ws, `C${r}`, t.epi);
-    setCell(ws, `D${r}`, t.epc);
-    setCell(ws, `E${r}`, t.procedures);
-    setCell(ws, `F${r}`, t.formations);
+  files['xl/worksheets/sheet1.xml'] = strToU8(sheetXml);
+  return zipSync(files, { level: 6 });
+}
+
+// ---------------------------------------------------------------------------
+// Analyse ERPT export (public/templates/analyse-erpt-template.xlsx)
+// ---------------------------------------------------------------------------
+// Layout confirmed from the real template's raw XML: title merged A1:AA3
+// (generic, untouched), "Intervention:" label/value on row 6 (A6:B6 / C6),
+// 3-row header block rows 10-12 (untouched), then two fixed-size blocks:
+// "liee a l'activite" rows 13-28 (16 rows, column A pre-merged A13:A28 with
+// the section label already in the template) and "liee a l'environnement"
+// rows 29-43 (15 rows, A29:A43). Columns M/R/W/Y/Z hold LIVE Excel formulas
+// (Rp, cotation MT, cotation FOH, niveau de maitrise, cotation Rr - confirmed
+// by inspecting the raw <f> elements) and must never be overwritten; X
+// (cotation globale) is a static value in this template (references an
+// external "table de cotation" workbook not attached) and must be written
+// explicitly. AA (Rr, the final F/M/S/C grade) stays untouched/manual, per the
+// existing product decision (see mo-cotation.ts).
+
+const ACTIVITE_FIRST_ROW = 13;
+const ACTIVITE_ROW_COUNT = 16;
+const ENVIRONNEMENT_FIRST_ROW = 29;
+const ENVIRONNEMENT_ROW_COUNT = 15;
+
+function analyseLigneUpdates(l: any, famillesMap: Map<number, string>): Map<string, CellUpdate> {
+  const updates = new Map<string, CellUpdate>();
+  updates.set('B', textCell(l.danger || ''));
+  updates.set('C', textCell(l.famille_risque_id != null ? (famillesMap.get(l.famille_risque_id) || '') : ''));
+  updates.set('D', textCell(l.risques_associes || ''));
+  updates.set('E', textCell(l.corps_tete ? 'X' : ''));
+  updates.set('F', textCell(l.corps_membres ? 'X' : ''));
+  updates.set('G', textCell(l.corps_divers ? 'X' : ''));
+  updates.set('H', textCell(l.corps_voies_penetration ? 'X' : ''));
+  updates.set('I', textCell(l.corps_autres || ''));
+  updates.set('J', numberCell(l.f ?? null));
+  updates.set('K', numberCell(l.p ?? null));
+  updates.set('L', numberCell(l.g ?? null));
+  // M (Rp) is a live formula (J*K*L) - not written.
+  updates.set('N', textCell(l.epi || ''));
+  updates.set('O', numberCell(l.cotation_epi ?? null));
+  updates.set('P', textCell(l.epc || ''));
+  updates.set('Q', numberCell(l.cotation_epc ?? null));
+  // R (cotation MT) is a live formula (PRODUCT(O,Q)) - not written.
+  updates.set('S', textCell(l.mesures_organisationnelles || ''));
+  updates.set('T', numberCell(l.cotation_mo ?? null));
+  updates.set('U', textCell(l.mesures_humaines || ''));
+  updates.set('V', numberCell(l.cotation_mh ?? null));
+  // W (cotation FOH) is a live formula (PRODUCT(T,V)) - not written.
+  updates.set('X', numberCell(l.cotation_globale ?? null));
+  // Y (niveau de maitrise) and Z (cotation Rr) are live formulas - not written.
+  // AA (Rr letter) intentionally left blank/manual - see mo-cotation.ts.
+  return updates;
+}
+
+function maxRowNumber(sheetXml: string): number {
+  const rows = [...sheetXml.matchAll(/<row r="(\d+)"/g)].map(m => Number(m[1]));
+  return rows.length ? Math.max(...rows) : 0;
+}
+
+// The template's block sizes (16 activite rows, 15 environnement rows) are a
+// fixed grid, not derived from the 16-entry familles_risques list - real seeded
+// data (e.g. "Site TEST" / Maintenance CTA) already has 17 activite lignes and
+// 16 environnement lignes, exceeding both blocks by one row. Rather than
+// silently dropping real safety data past capacity, any overflow lignes are
+// appended as extra rows after the template's last row (the disclaimer note),
+// unstyled - same fallback already accepted for the DUER export's overflow rows.
+function appendOverflowRows(
+  sheetXml: string,
+  activiteOverflow: any[],
+  environnementOverflow: any[],
+  famillesMap: Map<number, string>
+): string {
+  if (!activiteOverflow.length && !environnementOverflow.length) return sheetXml;
+
+  let nextRow = maxRowNumber(sheetXml) + 1;
+  const overflowUpdates = new Map<number, Map<string, CellUpdate>>();
+
+  const appendBlock = (lignes: any[], label: string) => {
+    lignes.forEach((l, i) => {
+      const updates = analyseLigneUpdates(l, famillesMap);
+      if (i === 0) updates.set('A', textCell(label));
+      overflowUpdates.set(nextRow, updates);
+      nextRow += 1;
+    });
+  };
+  appendBlock(activiteOverflow, "Analyse liee a l'activite (suite - hors capacite du modele)");
+  appendBlock(environnementOverflow, "Analyse liee a l'environnement de travail (suite - hors capacite du modele)");
+
+  return patchSheetXml(sheetXml, overflowUpdates);
+}
+
+export async function buildAnalyseWorkbook(assets: Fetcher, mo: any, famillesMap: Map<number, string>): Promise<Uint8Array> {
+  const { files, sheetXml: original } = await loadTemplateSheet1(
+    assets, 'templates/analyse-erpt-template.xlsx', 'analyse ERPT'
+  );
+  let sheetXml = original;
+
+  const headerUpdates = new Map<number, Map<string, CellUpdate>>();
+  headerUpdates.set(6, new Map([
+    ['C', textCell(mo.sous_activite_libelle || mo.intitule_poste || '')]
+  ]));
+  sheetXml = patchSheetXml(sheetXml, headerUpdates);
+
+  const activiteAll: any[] = mo.analyse_lignes.activite;
+  const environnementAll: any[] = mo.analyse_lignes.environnement;
+
+  const rowUpdates = new Map<number, Map<string, CellUpdate>>();
+  activiteAll.slice(0, ACTIVITE_ROW_COUNT).forEach((l, i) => {
+    rowUpdates.set(ACTIVITE_FIRST_ROW + i, analyseLigneUpdates(l, famillesMap));
   });
+  environnementAll.slice(0, ENVIRONNEMENT_ROW_COUNT).forEach((l, i) => {
+    rowUpdates.set(ENVIRONNEMENT_FIRST_ROW + i, analyseLigneUpdates(l, famillesMap));
+  });
+  sheetXml = patchSheetXml(sheetXml, rowUpdates);
 
-  extendRange(ws, headerRow - 1 + Math.max(mo.taches.length, 1), 5);
-  ws['!cols'] = [{ wch: 30 }, { wch: 30 }, { wch: 26 }, { wch: 26 }, { wch: 34 }, { wch: 30 }];
-  XLSX.utils.book_append_sheet(wb, ws, 'Mode operatoire');
-  return wb;
-}
+  sheetXml = appendOverflowRows(
+    sheetXml,
+    activiteAll.slice(ACTIVITE_ROW_COUNT),
+    environnementAll.slice(ENVIRONNEMENT_ROW_COUNT),
+    famillesMap
+  );
 
-function writeAnalyseHeaders(ws: XLSX.WorkSheet, titre: string) {
-  setCell(ws, 'B1', titre);
-  setCell(ws, 'B2', 'Dangers identifies');
-  setCell(ws, 'C2', 'Famille de risques');
-  setCell(ws, 'D2', 'Risques associes a ces dangers et Nature des lesions probables / Facteurs aggravants potentiels');
-  setCell(ws, 'E2', 'Partie(s) du corps concernee(s)');
-  setCell(ws, 'J2', 'Cotation du risque potentiel');
-  setCell(ws, 'M2', 'Rp');
-  setCell(ws, 'N2', 'Moyens de maitrise et leur cotation');
-  setCell(ws, 'X2', 'Cotation globale des moyens de maitrise');
-  setCell(ws, 'Y2', 'Niveau de maitrise');
-  setCell(ws, 'Z2', 'Cotation Rr');
-  setCell(ws, 'AA2', 'Rr');
-
-  setCell(ws, 'E3', 'Tete');
-  setCell(ws, 'F3', 'Membres superieurs et/ou inferieurs');
-  setCell(ws, 'G3', 'Divers');
-  setCell(ws, 'H3', 'Voies de penetration');
-  setCell(ws, 'I3', 'Autres');
-  setCell(ws, 'J3', 'F');
-  setCell(ws, 'K3', 'P');
-  setCell(ws, 'L3', 'G');
-  setCell(ws, 'N3', 'Mesures Techniques');
-  setCell(ws, 'R3', 'Cotation MT');
-  setCell(ws, 'S3', 'Facteurs Organisationnels et Humains');
-  setCell(ws, 'W3', 'Cotation FOH');
-
-  setCell(ws, 'N4', 'EPI');
-  setCell(ws, 'O4', 'Cotation EPI');
-  setCell(ws, 'P4', 'EPC');
-  setCell(ws, 'Q4', 'Cotation EPC');
-  setCell(ws, 'S4', 'Mesures Organisationnelles');
-  setCell(ws, 'T4', 'Cotation MO');
-  setCell(ws, 'U4', 'Mesures Humaines');
-  setCell(ws, 'V4', 'Cotation MH');
-}
-
-function writeAnalyseLigneRow(ws: XLSX.WorkSheet, row: number, l: any, famillesMap: Map<number, string>) {
-  setCell(ws, `B${row}`, l.danger);
-  setCell(ws, `C${row}`, l.famille_risque_id != null ? famillesMap.get(l.famille_risque_id) : null);
-  setCell(ws, `D${row}`, l.risques_associes);
-  setCell(ws, `E${row}`, l.corps_tete ? 'X' : '');
-  setCell(ws, `F${row}`, l.corps_membres ? 'X' : '');
-  setCell(ws, `G${row}`, l.corps_divers ? 'X' : '');
-  setCell(ws, `H${row}`, l.corps_voies_penetration ? 'X' : '');
-  setCell(ws, `I${row}`, l.corps_autres);
-  setCell(ws, `J${row}`, l.f);
-  setCell(ws, `K${row}`, l.p);
-  setCell(ws, `L${row}`, l.g);
-  setCell(ws, `M${row}`, l.rp);
-  setCell(ws, `N${row}`, l.epi);
-  setCell(ws, `O${row}`, l.cotation_epi);
-  setCell(ws, `P${row}`, l.epc);
-  setCell(ws, `Q${row}`, l.cotation_epc);
-  setCell(ws, `R${row}`, l.cotation_mt);
-  setCell(ws, `S${row}`, l.mesures_organisationnelles);
-  setCell(ws, `T${row}`, l.cotation_mo);
-  setCell(ws, `U${row}`, l.mesures_humaines);
-  setCell(ws, `V${row}`, l.cotation_mh);
-  setCell(ws, `W${row}`, l.cotation_foh);
-  setCell(ws, `X${row}`, l.cotation_globale);
-  setCell(ws, `Y${row}`, l.niveau_maitrise);
-  setCell(ws, `Z${row}`, l.rr);
-  // AA (Rr, letter grade F/M/S/C) intentionally left blank - manual, filled by the user in Excel.
-}
-
-export function buildAnalyseWorkbook(mo: any, famillesMap: Map<number, string>): XLSX.WorkBook {
-  const wb = XLSX.utils.book_new();
-  const ws: XLSX.WorkSheet = {};
-
-  writeAnalyseHeaders(ws, mo.sous_activite_libelle || mo.intitule_poste || '');
-
-  let row = 5;
-  setCell(ws, `A${row}`, "ERPT liee a l'activite");
-  const activite = mo.analyse_lignes.activite as any[];
-  if (activite.length === 0) {
-    row += 1;
-  } else {
-    for (const l of activite) {
-      writeAnalyseLigneRow(ws, row, l, famillesMap);
-      row += 1;
-    }
-  }
-
-  setCell(ws, `A${row}`, "ERPT liee a l'environnement de travail");
-  const environnement = mo.analyse_lignes.environnement as any[];
-  if (environnement.length === 0) {
-    row += 1;
-  } else {
-    for (const l of environnement) {
-      writeAnalyseLigneRow(ws, row, l, famillesMap);
-      row += 1;
-    }
-  }
-
-  extendRange(ws, row, 26); // column AA = index 26
-  ws['!cols'] = Array.from({ length: 27 }, (_, i) => ({ wch: i === 1 ? 26 : i === 3 ? 34 : 16 }));
-  XLSX.utils.book_append_sheet(wb, ws, 'Analyse');
-  return wb;
+  files['xl/worksheets/sheet1.xml'] = strToU8(sheetXml);
+  // The live formulas (Rp, cotation MT/FOH, niveau, Rr) reference cells we've
+  // just overwritten - force Excel to recalculate them on open rather than
+  // displaying the original example's stale cached values.
+  files['xl/workbook.xml'] = strToU8(forceFullRecalcOnLoad(strFromU8(files['xl/workbook.xml'])));
+  return zipSync(files, { level: 6 });
 }
