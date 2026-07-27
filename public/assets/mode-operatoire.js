@@ -129,6 +129,11 @@ async function showDetail(moId) {
   detail.appendChild(header);
 
   detail.appendChild(renderTachesSection(mo));
+  detail.appendChild(el('p', { class: 'hint', style: 'margin:-10px 0 18px;' }, [
+    'Pour choisir les moyens de maitrise a envisager par famille de risque, voir le ',
+    el('a', { href: '/informations.html#referentiel-mesures', target: '_blank' }, 'referentiel des mesures de maitrise'),
+    '.'
+  ]));
   detail.appendChild(renderAnalyseSection(mo, 'activite', "Analyse — liee a l'activite"));
   detail.appendChild(renderAnalyseSection(mo, 'environnement', "Analyse — liee a l'environnement"));
 }
@@ -199,10 +204,17 @@ function renderTacheRow(t) {
 function familleSelect(selectedId) {
   const select = el('select', {});
   select.appendChild(el('option', { value: '' }, '—'));
+  let currentGroup = null;
+  let groupEl = null;
   for (const f of familles) {
+    if (f.groupe !== currentGroup) {
+      currentGroup = f.groupe;
+      groupEl = f.groupe ? el('optgroup', { label: f.groupe }) : null;
+      if (groupEl) select.appendChild(groupEl);
+    }
     const opt = el('option', { value: f.id }, f.libelle);
     if (selectedId && Number(selectedId) === f.id) opt.selected = true;
-    select.appendChild(opt);
+    (groupEl || select).appendChild(opt);
   }
   return select;
 }
