@@ -168,6 +168,27 @@ planPreventionDocRoutes.get('/documents/:docId', async (c) => {
   return c.json(full);
 });
 
+planPreventionDocRoutes.patch('/documents/:docId', async (c) => {
+  const docId = c.req.param('docId');
+  const existing = await c.env.DB.prepare('SELECT id FROM plan_prevention_documents WHERE id = ?').bind(docId).first();
+  if (!existing) return c.json({ error: 'Document introuvable' }, 404);
+
+  const body = await c.req.json<{ conditions_intervention?: unknown }>().catch(() => null);
+  if (!body || body.conditions_intervention === undefined) {
+    return c.json({ error: 'Corps JSON invalide : champ conditions_intervention attendu' }, 400);
+  }
+  if (body.conditions_intervention !== null && typeof body.conditions_intervention !== 'object') {
+    return c.json({ error: 'conditions_intervention doit etre un objet JSON (ou null)' }, 400);
+  }
+
+  await c.env.DB.prepare('UPDATE plan_prevention_documents SET conditions_intervention_json = ? WHERE id = ?')
+    .bind(body.conditions_intervention !== null ? JSON.stringify(body.conditions_intervention) : null, docId)
+    .run();
+
+  const full = await loadDocument(c.env.DB, Number(docId));
+  return c.json(full);
+});
+
 planPreventionDocRoutes.patch('/rubriques/:id', async (c) => {
   const id = c.req.param('id');
   const body = await c.req.json<{ titre?: string; concerne?: boolean }>().catch(() => null);
