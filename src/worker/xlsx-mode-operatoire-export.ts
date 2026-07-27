@@ -89,13 +89,18 @@ export async function buildModeOperatoireWorkbook(assets: Fetcher, mo: any): Pro
 // 3-row header block rows 10-12 (untouched), then two fixed-size blocks:
 // "liee a l'activite" rows 13-28 (16 rows, column A pre-merged A13:A28 with
 // the section label already in the template) and "liee a l'environnement"
-// rows 29-43 (15 rows, A29:A43). Columns M/R/W/Y/Z hold LIVE Excel formulas
-// (Rp, cotation MT, cotation FOH, niveau de maitrise, cotation Rr - confirmed
-// by inspecting the raw <f> elements) and must never be overwritten; X
-// (cotation globale) is a static value in this template (references an
-// external "table de cotation" workbook not attached) and must be written
-// explicitly. AA (Rr, the final F/M/S/C grade) stays untouched/manual, per the
-// existing product decision (see mo-cotation.ts).
+// rows 29-43 (15 rows, A29:A43). Columns M/R/W/X/Y/Z all hold LIVE Excel
+// formulas (Rp, cotation MT, cotation FOH, cotation globale, niveau de
+// maitrise, cotation Rr) and must never be overwritten - only raw input cells
+// are written. The template now bundles a second sheet ("Cotation") with the
+// lookup matrix X's formula (HLOOKUP against Cotation!$D$76:$M$86) depends on,
+// so it travels with every export and Excel recalculates X correctly (earlier
+// versions of this template didn't include that sheet, and X was a frozen
+// value the app had to write explicitly - no longer the case). AA (Rr, the
+// final F/M/S/C grade) stays untouched/manual, per the existing product
+// decision (see mo-cotation.ts) - some AA cells in the template do carry a
+// formula, but it errors out (#VALUE!) even in the template's own filled
+// example rows, so there's nothing reliable to reproduce.
 
 const ACTIVITE_FIRST_ROW = 13;
 const ACTIVITE_ROW_COUNT = 16;
@@ -125,9 +130,8 @@ function analyseLigneUpdates(l: any, famillesMap: Map<number, string>): Map<stri
   updates.set('T', numberCell(l.cotation_mo ?? null));
   updates.set('U', textCell(l.mesures_humaines || ''));
   updates.set('V', numberCell(l.cotation_mh ?? null));
-  // W (cotation FOH) is a live formula (PRODUCT(T,V)) - not written.
-  updates.set('X', numberCell(l.cotation_globale ?? null));
-  // Y (niveau de maitrise) and Z (cotation Rr) are live formulas - not written.
+  // W (cotation FOH), X (cotation globale, HLOOKUP against Cotation!),
+  // Y (niveau de maitrise) and Z (cotation Rr) are all live formulas - not written.
   // AA (Rr letter) intentionally left blank/manual - see mo-cotation.ts.
   return updates;
 }

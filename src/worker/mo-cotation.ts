@@ -3,8 +3,18 @@
 // (`Grille_analyse_risques_export.xlsx`, e.g. row 13: M13=J13*K13*L13,
 // R13=PRODUCT(O13,Q13), W13=PRODUCT(T13,V13), Y13=IF(...), Z13=M13*X13):
 // Rp = F x P x G ; cotation MT = EPI x EPC ; cotation FOH = MO x MH ;
-// cotation globale = AVERAGE(MT, FOH) ; niveau de maitrise = thresholded on globale ;
+// niveau de maitrise = thresholded on cotation globale ;
 // Rr (numerique) = Rp x cotation globale.
+//
+// `cotation_globale` here is an AVERAGE(MT, FOH) approximation, used only for
+// the on-screen live preview (API response, UI). The real Excel formula (X)
+// is `HLOOKUP(MT, Cotation!$D$76:$M$86, MATCH(FOH, Cotation!$C$76:$C$86, 0))`
+// - a bilinear interpolation against a matrix in the template's "Cotation"
+// sheet, itself derived from further anchor cells - not replicated here since
+// the exported Excel file carries that sheet and computes X live (see
+// xlsx-mode-operatoire-export.ts). AVERAGE happened to match on the sampled
+// rows checked so far but is not proven equivalent in general.
+//
 // The final Rr LETTER (F/M/S/C) is intentionally not computed anywhere in the
 // app, per explicit product decision: it stays a manual cell filled by the user
 // directly in the exported Excel file.
