@@ -39,6 +39,33 @@ function tacheRow(t: any) {
   };
 }
 
+// Per the method (informations.html #methode-mode-operatoire) the mode
+// operatoire "reprend" the taches/risques/moyens de maitrise identified
+// during the analyse - so a tache's displayed fields are derived from the
+// analyse lignes linked to it (mo_tache_id) whenever at least one exists.
+// Legacy taches with no linked ligne (e.g. every currently seeded "Site
+// TEST" example, created before this link existed) fall back to their
+// stored manual fields, unchanged.
+function deriveTacheRow(t: any, analyseLignes: any[]) {
+  const linked = analyseLignes.filter((l) => l.mo_tache_id === t.id);
+  if (linked.length === 0) {
+    return { ...tacheRow(t), derived: false, linked_dangers: 0 };
+  }
+  const join = (values: (string | null | undefined)[]) => values.filter(Boolean).join('\n');
+  return {
+    id: t.id,
+    ordre: t.ordre,
+    tache: t.tache,
+    risque_present: join(linked.map((l) => l.risques_associes)),
+    epi: join(linked.map((l) => l.epi)),
+    epc: join(linked.map((l) => l.epc)),
+    procedures: join(linked.map((l) => l.mesures_organisationnelles)),
+    formations: join(linked.map((l) => l.mesures_humaines)),
+    derived: true,
+    linked_dangers: linked.length
+  };
+}
+
 function analyseLigneRow(l: any) {
   const derived = computeCotationDerived({
     f: l.f, p: l.p, g: l.g,
@@ -51,6 +78,7 @@ function analyseLigneRow(l: any) {
     ordre: l.ordre,
     danger: l.danger,
     famille_risque_id: l.famille_risque_id,
+    mo_tache_id: l.mo_tache_id,
     risques_associes: l.risques_associes,
     corps_tete: !!l.corps_tete,
     corps_membres: !!l.corps_membres,
@@ -82,7 +110,7 @@ export async function loadModeOperatoire(db: D1Database, id: number) {
 
   return {
     ...moRow(mo),
-    taches: taches.map(tacheRow),
+    taches: taches.map((t) => deriveTacheRow(t, analyseLignes)),
     analyse_lignes: {
       activite: analyseLignes.filter((l) => l.contexte === 'activite'),
       environnement: analyseLignes.filter((l) => l.contexte === 'environnement')
@@ -208,9 +236,26 @@ moTachesRoutes.patch('/:id', async (c) => {
 
 moTachesRoutes.delete('/:id', async (c) => {
   const id = c.req.param('id');
+  // Unlink any analyse lignes pointing at this tache before deleting it -
+  // SQLite doesn't enforce/cascade the plain REFERENCES clause here, and a
+  // dangling mo_tache_id would silently break derivation for no visible reason.
+  await c.env.DB.prepare('UPDATE mo_analyse_lignes SET mo_tache_id = NULL WHERE mo_tache_id = ?').bind(id).run();
   await c.env.DB.prepare('DELETE FROM mo_taches WHERE id = ?').bind(id).run();
   return c.json({ ok: true });
 });
+
+// Resolves body.mo_tache_id to a validated value: null if absent/empty,
+// the id if it references a tache belonging to this mode operatoire, or
+// throws-equivalent (returns undefined) if it references something else -
+// callers treat undefined as "ignore, don't link" rather than erroring, to
+// keep this forgiving like the rest of this file's PATCH handlers.
+async function resolveTacheId(db: D1Database, moId: string | number, raw: unknown): Promise<number | null> {
+  if (raw === undefined || raw === null || raw === '') return null;
+  const tacheId = Number(raw);
+  if (!Number.isInteger(tacheId)) return null;
+  const tache = await db.prepare('SELECT id FROM mo_taches WHERE id = ? AND mode_operatoire_id = ?').bind(tacheId, moId).first();
+  return tache ? tacheId : null;
+}
 
 modesOperatoiresRoutes.post('/:id/analyse-lignes', async (c) => {
   const moId = c.req.param('id');
@@ -219,6 +264,7 @@ modesOperatoiresRoutes.post('/:id/analyse-lignes', async (c) => {
 
   const body = await c.req.json<any>().catch(() => ({}));
   const contexte = body.contexte === 'environnement' ? 'environnement' : 'activite';
+  const moTacheId = await resolveTacheId(c.env.DB, moId, body.mo_tache_id);
 
   const { count } = await c.env.DB.prepare(
     'SELECT COUNT(*) as count FROM mo_analyse_lignes WHERE mode_operatoire_id = ? AND contexte = ?'
@@ -226,13 +272,13 @@ modesOperatoiresRoutes.post('/:id/analyse-lignes', async (c) => {
 
   const result = await c.env.DB.prepare(
     `INSERT INTO mo_analyse_lignes
-      (mode_operatoire_id, contexte, ordre, danger, famille_risque_id, risques_associes,
+      (mode_operatoire_id, contexte, ordre, danger, famille_risque_id, mo_tache_id, risques_associes,
        corps_tete, corps_membres, corps_divers, corps_voies_penetration, corps_autres,
        f, p, g, epi, cotation_epi, epc, cotation_epc,
        mesures_organisationnelles, cotation_mo, mesures_humaines, cotation_mh)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id`
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id`
   ).bind(
-    moId, contexte, count, body.danger ?? null, body.famille_risque_id ?? null, body.risques_associes ?? null,
+    moId, contexte, count, body.danger ?? null, body.famille_risque_id ?? null, moTacheId, body.risques_associes ?? null,
     body.corps_tete ? 1 : 0, body.corps_membres ? 1 : 0, body.corps_divers ? 1 : 0, body.corps_voies_penetration ? 1 : 0,
     body.corps_autres ?? null,
     body.f ?? null, body.p ?? null, body.g ?? null,
@@ -255,16 +301,19 @@ moAnalyseLignesRoutes.patch('/:id', async (c) => {
 
   const pick = (key: string) => (body[key] !== undefined ? body[key] : existing[key]);
   const pickBool = (key: string) => (body[key] !== undefined ? (body[key] ? 1 : 0) : existing[key]);
+  const moTacheId = body.mo_tache_id !== undefined
+    ? await resolveTacheId(c.env.DB, existing.mode_operatoire_id, body.mo_tache_id)
+    : existing.mo_tache_id;
 
   await c.env.DB.prepare(
     `UPDATE mo_analyse_lignes SET
-      danger = ?, famille_risque_id = ?, risques_associes = ?,
+      danger = ?, famille_risque_id = ?, mo_tache_id = ?, risques_associes = ?,
       corps_tete = ?, corps_membres = ?, corps_divers = ?, corps_voies_penetration = ?, corps_autres = ?,
       f = ?, p = ?, g = ?, epi = ?, cotation_epi = ?, epc = ?, cotation_epc = ?,
       mesures_organisationnelles = ?, cotation_mo = ?, mesures_humaines = ?, cotation_mh = ?
      WHERE id = ?`
   ).bind(
-    pick('danger'), pick('famille_risque_id'), pick('risques_associes'),
+    pick('danger'), pick('famille_risque_id'), moTacheId, pick('risques_associes'),
     pickBool('corps_tete'), pickBool('corps_membres'), pickBool('corps_divers'), pickBool('corps_voies_penetration'),
     pick('corps_autres'),
     pick('f'), pick('p'), pick('g'), pick('epi'), pick('cotation_epi'), pick('epc'), pick('cotation_epc'),

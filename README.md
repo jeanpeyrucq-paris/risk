@@ -39,10 +39,22 @@ L'export Excel est genere de zero (control-style), aucun modele client fourni po
 ## Module D : mode operatoire + analyse ERPT
 
 Chaque mode operatoire (rattache a un site, comme le plan de prevention) regroupe :
-- des **taches** (tache / risque present / EPI / EPC / procedures / formations) ;
+- des **taches** (le decoupage de la gamme de maintenance) ;
 - une **analyse ERPT**, deux blocs de lignes ("liee a l'activite" / "liee a l'environnement"),
-  chacune pre-listant les 16 familles de risques fixes (table `familles_risques`), avec
-  cotation F·P·G, EPI/EPC/mesures organisationnelles/mesures humaines et leurs cotations.
+  organisee par familles de risques (table `familles_risques`), avec cotation F·P·G,
+  EPI/EPC/mesures organisationnelles/mesures humaines et leurs cotations.
+
+**Les taches et l'analyse sont liees** (`mo_analyse_lignes.mo_tache_id`, migration
+`0006_link_taches_analyse.sql`), conformement a la methode presentee sur la page
+Informations (`#methode-mode-operatoire`) : on nomme d'abord les taches de la gamme de
+maintenance, puis chaque danger identifie dans l'analyse (activite ou environnement) est
+rattache a la tache concernee. Le risque present / EPI / EPC / procedures / formations
+d'une tache se calculent automatiquement a partir des lignes d'analyse qui lui sont liees
+(`derive Tache Row` dans `modes-operatoires.ts`) — plus besoin de ressaisir deux fois la
+meme information. Une tache sans ligne liee (tout l'historique "Site TEST", cree avant
+l'existence de ce lien) retombe sur son contenu manuel d'origine, inchange : aucune donnee
+existante n'a ete perdue ou modifiee par ce changement, et les fichiers d'export restent
+les memes (ils lisent simplement les champs de la tache, derives ou manuels).
 
 Les formules de cotation ont ete confirmees en inspectant les formules Excel **reelles**
 embarquees dans le modele client (`Grille_analyse_risques_export.xlsx`, colonnes M/R/W/Y/Z -
