@@ -128,11 +128,19 @@ async function showDetail(moId) {
   ]);
   detail.appendChild(header);
 
+  const methodeLink = el('a', { href: '#methode-mode-operatoire' }, 'methode');
+  const referentielLink = el('a', { href: '#referentiel-mesures' }, 'referentiel des mesures de maitrise');
+  [methodeLink, referentielLink].forEach((link) => {
+    link.addEventListener('click', () => {
+      const guide = document.querySelector('details.rubrique');
+      if (guide) guide.open = true;
+    });
+  });
   detail.appendChild(el('p', { class: 'hint', style: 'margin:-10px 0 18px;' }, [
     "Methode : nommez d'abord les taches de la gamme de maintenance, puis analysez l'activite et l'environnement (ci-dessous) en liant chaque danger identifie a la tache concernee. Le mode operatoire reprend automatiquement les risques et moyens de maitrise de l'analyse — voir la ",
-    el('a', { href: '/informations.html#methode-mode-operatoire', target: '_blank' }, 'methode'),
+    methodeLink,
     ' et le ',
-    el('a', { href: '/informations.html#referentiel-mesures', target: '_blank' }, 'referentiel des mesures de maitrise'),
+    referentielLink,
     '.'
   ]));
 
